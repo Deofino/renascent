@@ -36,9 +36,16 @@ p {
 }
 
 span {
-	font-size: 13px;
+	padding: 5px;
+	font-size: 13.5px;
 }
-
+select{
+	background-color: #ffffea;
+	border-radius: 6px;
+	padding: 5px;
+	font-size: 15px;
+	margin-left: 10px;
+}
 a {
 	color: #333;
 	font-size: 14px;

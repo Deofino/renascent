@@ -12,7 +12,10 @@
 	<div class="form-container sign-up-container">
 		<form action="CONTROLLERS/cadastro_array.php" method="POST">
             <h1>Crie sua conta</h1> 
-            <span>Entre com seus dados</span>
+            <span>Entre com seus dados <select name="selectCadastrar">
+			<option value="0" selected>Funcionário</option>
+			<option value="1" >Cliente</option>
+			</select></span>
 			<input type="text" placeholder="Nome" required maxlength="40" name="txtNomeCadastro"/>
 			<input type="email" placeholder="E-mail" required maxlength="40" name="txtEmailCadastro"/>
 			<input type="password" placeholder="Senha" required maxlength="40" name="txtSenhaCadastro"/>
@@ -22,7 +25,10 @@
 	<div class="form-container sign-in-container">
 		<form method = "post"  action="CONTROLLERS/validar-login.php">
 			<h1>Entrar</h1>
-			<span>Entre com seu e-mail</span>
+			<span>Entre com seu e-mail <select name="selectEntrar">
+			<option value="0" selected>Funcionário</option>
+			<option value="1" >Cliente</option>
+			</select></span>
 			<input type="text" placeholder="E-mail" required maxlength="40" name="txtEmailLogin"/>
 			<input type="password" placeholder="Senha" required maxlength="40" name="txtSenhaLogin"/>
 			<a href="#">Esqueceu sua senha?</a>
