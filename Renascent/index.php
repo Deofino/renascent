@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Renascent</title>
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="css/styleLogin.css">
     <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up-container">
-            <form action="CONTROLLERS/cadastro_array.php" method="POST">
+            <form action="controllers/validar-login.php" method="POST">
                 <h1>Crie sua conta</h1>
-                <span>Entre seus dados <select name="selectCadastrar" class="custom-select sources" placeholder="Você é?">
+                <span>Entre seus dados <select name="selectCadastrar" class="custom-select sources" placeholder="Cliente">
                         <option value="1">Cliente</option>
                         <option value="2">Funcionario</option>
                     </select></span>
@@ -25,9 +25,9 @@
             </form>
         </div>
         <div class="form-container sign-in-container">
-            <form method="post" action="CONTROLLERS/validar-login.php">
+            <form method="post" action="controllers/validar-login.php">
                 <h1>Entrar</h1>
-                <span>Entre seu e-mail <select name="selectEntrar" class="custom-select sources" placeholder="Você é?">
+                <span>Entre seu e-mail <select name="selectEntrar" class="custom-select sources" placeholder="Cliente">
                         <option value="1">Cliente</option>
                         <option value="2">Funcionario</option>
                     </select></span>
