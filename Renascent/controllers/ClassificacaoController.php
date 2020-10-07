@@ -6,7 +6,7 @@
     }else{
         try {
          $classificacao = new Classificacao($select);
-        echo $classificacao->cadastrarClassificacao($classificacao);
+             echo $classificacao->cadastrarClassificacao($classificacao);
         } catch (Exception $e) {
             echo $e->getMessage();
         }

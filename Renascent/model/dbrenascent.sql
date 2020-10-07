@@ -1,0 +1,195 @@
+-- phpMyAdmin SQL Dump
+-- version 5.0.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Tempo de geração: 07-Out-2020 às 13:46
+-- Versão do servidor: 10.4.14-MariaDB
+-- versão do PHP: 7.4.9
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Banco de dados: `dbrenascent`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tbautor`
+--
+
+CREATE TABLE `tbautor` (
+  `idAutor` int(11) NOT NULL,
+  `nomeAutor` varchar(100) DEFAULT NULL,
+  `paisOrigem` varchar(30) DEFAULT NULL,
+  `nascimentoAutor` date DEFAULT NULL,
+  `falecimentoAutor` date DEFAULT NULL,
+  `dataCadastro` date DEFAULT NULL,
+  `idFuncionario` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `tbautor`
+--
+
+INSERT INTO `tbautor` (`idAutor`, `nomeAutor`, `paisOrigem`, `nascimentoAutor`, `falecimentoAutor`, `dataCadastro`, `idFuncionario`) VALUES
+(2, 'leronador', 'Pris', '1961-11-12', '1976-10-17', '0000-00-00', 2),
+(3, 'leronador', 'Pris', '1961-11-12', '1976-10-17', '2020-10-07', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tbclassificacao`
+--
+
+CREATE TABLE `tbclassificacao` (
+  `idClassificacao` int(11) NOT NULL,
+  `descricaoClassificacao` varchar(50) DEFAULT NULL,
+  `dataCadastro` date DEFAULT NULL,
+  `idFuncionario` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `tbclassificacao`
+--
+
+INSERT INTO `tbclassificacao` (`idClassificacao`, `descricaoClassificacao`, `dataCadastro`, `idFuncionario`) VALUES
+(1, 'pintura', '2020-10-07', 2),
+(2, 'Escultura', '2020-10-07', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tbfuncionario`
+--
+
+CREATE TABLE `tbfuncionario` (
+  `idFuncionario` int(11) NOT NULL,
+  `nomeFunionario` varchar(100) DEFAULT NULL,
+  `cpfFuncionario` char(14) DEFAULT NULL,
+  `dtNascimentoFuncionaio` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `tbfuncionario`
+--
+
+INSERT INTO `tbfuncionario` (`idFuncionario`, `nomeFunionario`, `cpfFuncionario`, `dtNascimentoFuncionaio`) VALUES
+(2, 'Deofino', '47910924810', '2003-11-23');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tbobra`
+--
+
+CREATE TABLE `tbobra` (
+  `idObra` int(11) NOT NULL,
+  `tituloObra` varchar(50) DEFAULT NULL,
+  `descricaoObra` varchar(200) DEFAULT NULL,
+  `idAutor` int(11) DEFAULT NULL,
+  `dataObra` date DEFAULT NULL,
+  `idClassificacao` int(11) DEFAULT NULL,
+  `paisObra` varchar(30) DEFAULT NULL,
+  `idFuncionario` int(11) DEFAULT NULL,
+  `dataCadastro` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices para tabela `tbautor`
+--
+ALTER TABLE `tbautor`
+  ADD PRIMARY KEY (`idAutor`),
+  ADD KEY `fkFuncAutor` (`idFuncionario`);
+
+--
+-- Índices para tabela `tbclassificacao`
+--
+ALTER TABLE `tbclassificacao`
+  ADD PRIMARY KEY (`idClassificacao`),
+  ADD KEY `fkFuncClassificacao` (`idFuncionario`);
+
+--
+-- Índices para tabela `tbfuncionario`
+--
+ALTER TABLE `tbfuncionario`
+  ADD PRIMARY KEY (`idFuncionario`);
+
+--
+-- Índices para tabela `tbobra`
+--
+ALTER TABLE `tbobra`
+  ADD PRIMARY KEY (`idObra`),
+  ADD KEY `fkAutor` (`idAutor`),
+  ADD KEY `fkClassificacao` (`idClassificacao`),
+  ADD KEY `fkFuncionario` (`idFuncionario`);
+
+--
+-- AUTO_INCREMENT de tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `tbautor`
+--
+ALTER TABLE `tbautor`
+  MODIFY `idAutor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de tabela `tbclassificacao`
+--
+ALTER TABLE `tbclassificacao`
+  MODIFY `idClassificacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de tabela `tbfuncionario`
+--
+ALTER TABLE `tbfuncionario`
+  MODIFY `idFuncionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de tabela `tbobra`
+--
+ALTER TABLE `tbobra`
+  MODIFY `idObra` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Restrições para despejos de tabelas
+--
+
+--
+-- Limitadores para a tabela `tbautor`
+--
+ALTER TABLE `tbautor`
+  ADD CONSTRAINT `fkFuncAutor` FOREIGN KEY (`idFuncionario`) REFERENCES `tbfuncionario` (`idFuncionario`);
+
+--
+-- Limitadores para a tabela `tbclassificacao`
+--
+ALTER TABLE `tbclassificacao`
+  ADD CONSTRAINT `fkFuncClassificacao` FOREIGN KEY (`idFuncionario`) REFERENCES `tbfuncionario` (`idFuncionario`);
+
+--
+-- Limitadores para a tabela `tbobra`
+--
+ALTER TABLE `tbobra`
+  ADD CONSTRAINT `fkAutor` FOREIGN KEY (`idAutor`) REFERENCES `tbautor` (`idAutor`),
+  ADD CONSTRAINT `fkClassificacao` FOREIGN KEY (`idClassificacao`) REFERENCES `tbclassificacao` (`idClassificacao`),
+  ADD CONSTRAINT `fkFuncionario` FOREIGN KEY (`idFuncionario`) REFERENCES `tbfuncionario` (`idFuncionario`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

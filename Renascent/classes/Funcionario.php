@@ -1,6 +1,6 @@
 <?php
     class Funcionario{
-        private $nome,$email,$senha;
+        private $id,$nome,$email,$senha;
         public function getNome(){
                 return $this->nome;
         }
@@ -27,6 +27,13 @@
             $this->nome = $nome;
             $this->email = $email;
             $this->senha = $senha;
+        }
+        public function getId(){
+                return $this->id;
+        }
+        public function setId($id){
+                $this->id = $id;
+                return $this;
         }
     }
 ?>

@@ -14,7 +14,9 @@
         if(($anoFalecimento - $anoNascimento) >= 110){
             echo "cara e mt velho mano";
         }else{
+            
             $autor = new Autor($nome,$pais,$nascimento,$falecimento);
+            //ve o codigo e importante
             $autor->cadastrarAutor($autor);
         }
     }else{

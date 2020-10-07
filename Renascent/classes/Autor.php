@@ -1,7 +1,7 @@
 <?php
     require_once("Conexao.php");
     class Autor{
-        private $id,$nome,$pais,$nascimento,$falecimento; 
+        private $id,$nome,$pais,$nascimento,$falecimento,$funcionario,$dataCadastro; 
 
         public function __construct($nome,$pais,$nascimento,$falecimento)
         {
@@ -9,6 +9,11 @@
                 $this->pais = $pais;
                 $this->nascimento = $nascimento;
                 $this->falecimento = $falecimento;
+                $this->dataCadastro = date('Y-m-d');
+                //como ak a gente ta inserindo uma FK, eu coloquei o 2, mas e pq no
+                //meu banco de dados, o funcionario é o 2, no daí talvez tenha que mudar
+                //ou criar um funcionario e colocar o ID dele aqui
+                $this->funcionario = 2;
         }
 
         public function getId(){
@@ -53,21 +58,32 @@
                 $this->falecimento = $falecimento;
                 return $this;
         }
-
+       
+        public function getFuncionario(){
+                return $this->funcionario;
+        }
+        public function setFuncionario($funcionario){
+                $this->funcionario = $funcionario;
+                return $this;
+        }
+        public function getDataCadastro(){
+                return $this->dataCadastro;
+        }
+        public function setDataCadastro($dataCadastro){
+                $this->dataCadastro = $dataCadastro;
+                return $this;
+        }
         public function cadastrarAutor($autor){
                 $con = Conexao::getConexao();
-                $insert = $con->prepare("INSERT INTO tbautor VALUES (default,?,?,?,?)");
+                $insert = $con->prepare("INSERT INTO tbautor VALUES (default,?,?,?,?,?,?)");
                 $insert->bindValue(1,$autor->getNome());
                 $insert->bindValue(2,$autor->getPais());
                 $insert->bindValue(3,$autor->getNascimento());
                 $insert->bindValue(4,$autor->getFalecimento());
+                $insert->bindValue(5,$autor->getDataCadastro());
+                $insert->bindValue(6,$autor->getFuncionario());
                 $insert->execute();
                 return $autor->getNascimento();
         }
-        public function autores(){
-                $con = Conexao::getConexao();
-                $selecet = $con->prepare("select nomeAutor from tbautor where idAutor = 1");
-                $selecet->execute();
-                
-        }
+       
     }
