@@ -12,28 +12,28 @@
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up-container">
-            <form action="controllers/validar-login.php" method="POST">
+            <form action="controllers/cadastro.php" method="POST">
                 <h1>Crie sua conta</h1>
                 <span>Entre seus dados <select name="selectCadastrar" class="custom-select sources" placeholder="Cliente">
                         <option value="1">Cliente</option>
                         <option value="2">Funcionario</option>
                     </select></span>
-                <input type="text" placeholder="Nome" required maxlength="40" name="txtNomeCadastro" />
-                <input type="email" placeholder="E-mail" required maxlength="40" name="txtEmailCadastro" />
+                <input type="text" placeholder="Nome" required maxlength="100" name="txtNomeCadastro" />
+                <input type="email" placeholder="E-mail" required maxlength="100" name="txtEmailCadastro" />
                 <input type="password" placeholder="Senha" required maxlength="40" name="txtSenhaCadastro" />
                 <button class="fonteBtn">Cadastrar</button>
             </form>
         </div>
         <div class="form-container sign-in-container">
-            <form method="post" action="controllers/validar-login.php">
+            <form method="post" action="controllers/login.php">
                 <h1>Entrar</h1>
                 <span>Entre seu e-mail <select name="selectEntrar" class="custom-select sources" placeholder="Cliente">
                         <option value="1">Cliente</option>
                         <option value="2">Funcionario</option>
                     </select></span>
-                <input type="text" placeholder="E-mail" required maxlength="40" name="txtEmailLogin" />
+                <input type="text" placeholder="E-mail" required maxlength="100" name="txtEmailLogin" />
                 <input type="password" placeholder="Senha" required maxlength="40" name="txtSenhaLogin" />
-                <a href="#">Esqueceu sua senha?</a>
+                <a href="<?php echo 'e-mail: adm, senha: 123' ?>">Esqueceu sua senha?</a>
                 <button class="fonteBtn">Entrar</button>
             </form>
         </div>

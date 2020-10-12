@@ -65,6 +65,7 @@
                 $this->dataCadastro = $dataCadastro;
                 return $this;
         }
+
         function __construct($titulo,$descricao,$autor,$dataObra
         ,$classificacao,$periodo,$pais,$funcionario,$dataCadastro)
         {
@@ -78,5 +79,21 @@
             $this->funcionario = $funcionario;
             $this->dataCadastro = $dataCadastro;
         }
+        public function cadastrarObra($obra){
+                $con = Conexao::getConexao();
+                $insert = $con->prepare("INSERT INTO tbobra values(default,?,?,?,?,?,?,?,?,?)");
+                $insert->bindValue(1,$obra->getTitulo());
+                $insert->bindValue(2,$obra->getDescricao());
+                $insert->bindValue(3,$obra->getAutor());
+                $insert->bindValue(1,$obra->getDataObra());
+                $insert->bindValue(2,$obra->getClassificacao());
+                $insert->bindValue(3,$obra->getPeriodo());
+                $insert->bindValue(1,$obra->getPais());
+                $insert->bindValue(2,$obra->getFuncionario());
+                $insert->bindValue(3,$obra->getDataCadastro());
+                $insert->execute();
+                return $this->getDescricao().' // '.$this->getFuncionario().' // '.$this->getDataCadastro();
+            }
+
     }
 ?>
