@@ -9,30 +9,107 @@ if (($_SESSION['email'] != 'adm') ||
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
     <title>Renascent</title>
-    <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"></head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="shortcut icon" href="../imgs/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="../css/fonta/fontawesome-all.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/style2.css"><body>
-<?php include_once('atalhos/menu-funcionario.php'); //incluindo menu?>
+    <link rel="stylesheet" type="text/css" href="../css/style2.css">
+ </head>
 
-<br>
-<br>
-<h1>conteudo home</h1>
+  <body>
 
-<br><br>
+	<header class="header">
+    <div class="content">
+      <div class="logo fl-left">
+        <a href="#">
+          <img src="../IMGS/logoPreta.png" alt="HTML e CSS Pro"/>
+        </a>
+      </div>
 
-<?php include_once('atalhos/footer.php'); //incluindo menu?>
+      <a href="#" class="nav-toggle fl-rigth">
+        <i class="fas fa-bars"></i> MENU
+      </a>
 
+      <nav class="nav active">
+        <p class="text-rigth">
+        <span class="nav-close">
+          <i class="fas fa-times"></i>
+        </span>
+       </p>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Obras</a></li>
+          <li><a href="#">Contato</a></li>
+          <li><a href="../controllers/logout.php">Sair</a></li>
+          <ul class="menuzin">
+	  		<li><a href="#">Cadastrar</a>
+	         	<ul>
+	                  <li><a href="cadastro-autor.php">Autor</a></li>
+	                  <li><a href="cadastro-categoria.php">Categoria</a></li>
+	                  <li><a href="#">Obra</a></li>
+	       		</ul>
+			</li>
+        </ul>
+         
+          
+        </ul>
+      </nav>
+    </div>
+    </header>
+    <!-- end / HEADER-->
+
+    <!-- start SEARCH E ESTRATISTICAS-->
+      <section class="section">
+        <div class="search-box">
+          <header>
+            <h1>Renascent</h1>
+            <p class="tagline">Sua arte preferida em forma digital</p><!--subtitulo-->
+          </header>
+          <form class="formSearch" method="post" option="">
+            <input type="search" name="busca" id="busca" placeholder="Pesquisar"/>
+            <button type="submit"><i class="fas fa-search"></i></button>
+          </form>
+        </div>
+        <div class="estatisticas">
+          <div class="estatisticas-item">
+            <span></span>
+            <p>Leonardo Da Vinci</p>
+          </div>
+          <div class="estatisticas-item">
+            <span></span>
+            <p>Michelangelo</p>
+          </div>
+          <div class="estatisticas-item">
+            <span></span>
+            <p>Rafael Sanzio</p>
+          </div>
+          <div class="estatisticas-item">
+            <span></span>
+            <p>Ticiano Vecellio</p>
+          </div>
+        </div>
+      </section>
+    <!-- end SEARCH E ESTATISTICAS-->
+
+    <!--CARD-->
+
+    
+    
+<!--FIM-CARD-->
+ 
+<!--FOOTER-->
+    <?php include_once('atalhos/footer.php');  //incluindo footer?>
+    <!--FIM-FOOTER-->
+
+      
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-</body>
-
+    <script src="../JS/script1.js"></script>
+   </body>
 </html>
 
 

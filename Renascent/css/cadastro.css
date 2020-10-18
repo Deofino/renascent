@@ -1,0 +1,168 @@
+
+/*resseta
+----------------------------------------------
+tirando os espaços*/
+*,*:before, *::after{margin: 0; padding: 0; box-sizing: border-box; -webkit-box-sizing: border-box}
+
+body{
+    background: url(../imgs/bg.png);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: inherit;/*pega o tamanho da fonte do navegador*/ 
+}
+
+.card-header {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 5px;
+    background-color: #fff;
+    border-bottom: #fff;
+  }
+
+.card-header:hover{
+    color:#daa520;
+}
+
+.card{
+    margin-top: 4%;
+    font-size: 20px;
+    align-items: center;
+    width: 500px;
+    height: 530px;
+    border-radius: 6px ;
+    -webkit-border-radius: 6px;
+    border-color: #daa520;
+}
+
+label{
+    color: #000;
+    position: relative;
+  }
+
+  h2:after{
+    content: ' ';
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin-top: 10px;
+    background: -webkit-linear-gradient(left, rgba(147,184,189,0) 0%,#f4c430 20%,#daa520 53%,#f4c430 79%,rgba(147,184,189,0) 100%); 
+    background: linear-gradient(left, #daa520 0%,#f4c430 20%,rgba(147,184,189,1) 53%,#f4c430 79%,rgba(147,184,189,0) 100%); 
+  }
+
+.nome{ 
+    margin: 0 0 25px 0;
+}
+
+input[type="text"]{
+    width: 90%;
+    border-radius: 6px;
+}
+input[type="date"]{
+    width: 46%;
+    border-radius: 6px;
+}
+
+input:hover{
+    color:#daa520;
+}
+
+
+  button {
+    margin-top: -350px;
+	border-radius: 20px;
+	border: 2px solid #7a6801;
+	background-color: #f6d725;
+
+	color: #FFFFFF;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 13px 40px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 150ms ease-in;
+}
+
+button:active {
+	transform: scale(0.95);
+}
+
+.fonteBtn {
+	color: black;
+}
+
+button:focus {
+	outline: none;
+}
+
+button.ghost {
+	background-color: transparent;
+	border-color: #FFFFFF;
+}
+.botao1{
+    float: left;
+}
+.botao2{
+    float: right;
+}
+
+.custom-select:hover{
+    color: inherit;
+    text-decoration: none;
+    color: #daa520;
+}
+
+
+/*OUTRO BOTÃO*/
+.voltar {
+    margin-top: -350px;
+	border-radius: 20px;
+	border: 2px solid #7a6801;
+	background-color: #f6d725;
+    text-decoration: none;
+	color: #FFFFFF;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 13px 40px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 150ms ease-in;
+}
+
+.voltar:active {
+	transform: scale(0.95);
+}
+
+.voltar {
+	color: black;
+}
+
+.voltar:focus {
+	outline: none;
+}
+
+.voltar.ghost {
+	background-color: transparent;
+	border-color: #FFFFFF;
+}
+.voltar:hover{
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/*DESCRIÇÃO*/
+
+.descricao{
+    text-align: center;
+}
+
+/*CLASSES AUXILIARES
+------------------------------------------*/
+.text-center{text-align: center;}
+.text-left{text-align: left;}
+.text-rigth{text-align: right;}
+
+.fl-left{float: left;}
+.fl-rigth{float: right;}
+
+
+  
+  

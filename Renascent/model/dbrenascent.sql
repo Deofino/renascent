@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 07-Out-2020 às 13:46
+-- Tempo de geração: 18-Out-2020 às 22:28
 -- Versão do servidor: 10.4.14-MariaDB
 -- versão do PHP: 7.4.9
 
@@ -37,14 +37,6 @@ CREATE TABLE `tbautor` (
   `idFuncionario` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Extraindo dados da tabela `tbautor`
---
-
-INSERT INTO `tbautor` (`idAutor`, `nomeAutor`, `paisOrigem`, `nascimentoAutor`, `falecimentoAutor`, `dataCadastro`, `idFuncionario`) VALUES
-(2, 'leronador', 'Pris', '1961-11-12', '1976-10-17', '0000-00-00', 2),
-(3, 'leronador', 'Pris', '1961-11-12', '1976-10-17', '2020-10-07', 2);
-
 -- --------------------------------------------------------
 
 --
@@ -58,14 +50,6 @@ CREATE TABLE `tbclassificacao` (
   `idFuncionario` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Extraindo dados da tabela `tbclassificacao`
---
-
-INSERT INTO `tbclassificacao` (`idClassificacao`, `descricaoClassificacao`, `dataCadastro`, `idFuncionario`) VALUES
-(1, 'pintura', '2020-10-07', 2),
-(2, 'Escultura', '2020-10-07', 2);
-
 -- --------------------------------------------------------
 
 --
@@ -78,13 +62,6 @@ CREATE TABLE `tbfuncionario` (
   `cpfFuncionario` char(14) DEFAULT NULL,
   `dtNascimentoFuncionaio` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Extraindo dados da tabela `tbfuncionario`
---
-
-INSERT INTO `tbfuncionario` (`idFuncionario`, `nomeFunionario`, `cpfFuncionario`, `dtNascimentoFuncionaio`) VALUES
-(2, 'Deofino', '47910924810', '2003-11-23');
 
 -- --------------------------------------------------------
 
@@ -145,19 +122,19 @@ ALTER TABLE `tbobra`
 -- AUTO_INCREMENT de tabela `tbautor`
 --
 ALTER TABLE `tbautor`
-  MODIFY `idAutor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idAutor` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `tbclassificacao`
 --
 ALTER TABLE `tbclassificacao`
-  MODIFY `idClassificacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idClassificacao` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `tbfuncionario`
 --
 ALTER TABLE `tbfuncionario`
-  MODIFY `idFuncionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idFuncionario` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `tbobra`

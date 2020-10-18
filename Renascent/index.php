@@ -33,7 +33,7 @@
                     </select></span>
                 <input type="text" placeholder="E-mail" required maxlength="100" name="txtEmailLogin" />
                 <input type="password" placeholder="Senha" required maxlength="40" name="txtSenhaLogin" />
-                <a href="<?php echo 'e-mail: adm, senha: 123' ?>">Esqueceu sua senha?</a>
+                <a href="<?php echo 'Cliente: user(123), Funcionário: adm(123)' ?>">Esqueceu sua senha?</a>
                 <button class="fonteBtn">Entrar</button>
             </form>
         </div>

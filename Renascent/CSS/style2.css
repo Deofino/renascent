@@ -45,6 +45,37 @@ a:hover{
 
 /*HEADER
 ------------------------------------------*/
+/*DROPDWON*/
+.menuzin{
+    list-style:none;
+    float:left;
+    }
+.menuzin li{
+     position:relative;
+     float:left;
+     border-right:1px solid #daa520;
+     
+ }
+.menuzin li a{color:#000; text-decoration:none; padding:5px 10px; display:block; }
+
+.menuzin li a:hover{
+     color:#daa520;
+    text-shadow:0px 0px 5px #000;
+ }
+ .menuzin li  ul{
+    position:absolute;
+    top:25px;
+    left:0;
+    display:none;
+}
+.menuzin li:hover ul, .menu li.over ul{display: inline-block;}
+
+.menuzin li ul li{
+    display: inline-block;
+    width:150px;
+    }
+
+
 .header{
     position: fixed;
     width: 100%;
@@ -55,6 +86,7 @@ a:hover{
     max-width: 200px;
 
 }
+
 
 /*SEARCH E ESTATISTiCAS
 ------------------------------------------*/
@@ -183,6 +215,10 @@ a:hover{
         padding-bottom: 15px;
         border-bottom: 1px solid #ccc;
     }
+    .menuzin li  ul{
+        background: #fff;
+     }
+ 
 }
 
 
@@ -227,13 +263,8 @@ a:hover{
     .estatisticas-item:not(:last-of-type){
         border-right: 1px solid #daa520;
     }
-
+   
 }
-
-
-
-
-
 
 
 /* footer */
@@ -445,3 +476,4 @@ fieldset {
 :-ms-input-placeholder {
  color:#888;
 }
+
