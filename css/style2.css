@@ -94,7 +94,7 @@ a:hover{
     text-align: center;
     color: #ffffff;
     padding: 100px 0;
-    background: url('../IMGS/fundo.png');
+    background: url('../img/fundo.png');
     background-size: cover;/*ajusta a imagem junto do box*/
     background-position: center;
     background-attachment: fixed;
