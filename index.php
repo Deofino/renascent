@@ -14,7 +14,7 @@
             <form action="controllers/cadastro.php" method="POST">
                 <h1>Crie sua conta</h1>
                 <span>Entre seus dados <select name="selectCadastrar" class="custom-select sources" placeholder="Cliente">
-                        <option value="1">Cliente</option>
+                        <option value="1">Guilherme</option>
                         <option value="2">Funcionario</option>
                     </select></span>
                 <input type="text" placeholder="Nome" required maxlength="100" name="txtNomeCadastro" />
