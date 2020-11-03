@@ -5,7 +5,7 @@ tirando os espaços*/
 *,*:before, *::after{margin: 0; padding: 0; box-sizing: border-box; -webkit-box-sizing: border-box}
 
 body{
-    background: url(../imgs/bg.png);
+    background: url("../img/bg.png");
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: inherit;/*pega o tamanho da fonte do navegador*/ 
 }

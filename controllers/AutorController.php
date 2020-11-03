@@ -30,11 +30,11 @@
         }
     }else{
         ?>
-         <center><img src="../IMGS/download.png"/>
+         <center><img src="../img/download.png"/>
           <h4>Nascimento maior que falecimento!</h4></center>
        </div>
        <?php
-       // header("Location: ../views/index.php");
+        header("Location: ../views/index.php");
     }
     
 ?>
