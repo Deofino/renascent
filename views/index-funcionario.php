@@ -25,7 +25,7 @@ if (($_SESSION['email'] != 'adm') ||
     <div class="content">
       <div class="logo fl-left">
         <a href="#">
-          <img src="../IMGS/logoPreta.png" alt="HTML e CSS Pro"/>
+          <img src="../img/logoPreta.png" alt="HTML e CSS Pro"/>
         </a>
       </div>
 
