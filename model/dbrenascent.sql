@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 18-Out-2020 às 22:28
+-- Tempo de geração: 05-Nov-2020 às 17:15
 -- Versão do servidor: 10.4.14-MariaDB
--- versão do PHP: 7.4.9
+-- versão do PHP: 7.4.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -62,6 +62,12 @@ CREATE TABLE `tbfuncionario` (
   `cpfFuncionario` char(14) DEFAULT NULL,
   `dtNascimentoFuncionaio` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `tbfuncionario`
+--
+
+INSERT INTO `tbfuncionario` (`idFuncionario`, `nomeFunionario`, `cpfFuncionario`, `dtNascimentoFuncionaio`) VALUES(1, 'Deofino', '475.555.252-10', '2003-11-23');
 
 -- --------------------------------------------------------
 
@@ -134,7 +140,7 @@ ALTER TABLE `tbclassificacao`
 -- AUTO_INCREMENT de tabela `tbfuncionario`
 --
 ALTER TABLE `tbfuncionario`
-  MODIFY `idFuncionario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idFuncionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `tbobra`
