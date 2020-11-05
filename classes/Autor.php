@@ -13,7 +13,8 @@
                 //como ak a gente ta inserindo uma FK, eu coloquei o 2, mas e pq no
                 //meu banco de dados, o funcionario é o 2, no daí talvez tenha que mudar
                 //ou criar um funcionario e colocar o ID dele aqui
-                $this->funcionario = 2;
+                $this->funcionario = 1;
+                //merda tinha truncado as tabelas, ai o não tinha os funcionario ai deu ruim rapaz
         }
 
         public function getId(){
@@ -75,7 +76,8 @@
         }
         public function cadastrarAutor($autor){
                 $con = Conexao::getConexao();
-                $insert = $con->prepare("INSERT INTO tbautor VALUES (default,?,?,?,?,?,?)");
+                $insert = $con->prepare("INSERT INTO tbautor(nomeAutor,paisOrigem,nascimentoAutor
+                ,falecimentoAutor,dataCadastro,idFuncionario) values(?,?,?,?,?,?)");
                 $insert->bindValue(1,$autor->getNome());
                 $insert->bindValue(2,$autor->getPais());
                 $insert->bindValue(3,$autor->getNascimento());
@@ -83,7 +85,7 @@
                 $insert->bindValue(5,$autor->getDataCadastro());
                 $insert->bindValue(6,$autor->getFuncionario());
                 $insert->execute();
-                return $autor->getNascimento();
+                return $autor->getDataCadastro();
         }
        
     }

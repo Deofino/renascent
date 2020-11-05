@@ -15,7 +15,7 @@ require_once("Conexao.php");
         $this->dataCadastro = date('Y-m-d');
         /*Aqui e a mesma coisa, no meu ta funcionairo ID 2, mas cria o seu e muda ak, ou coloca seu 
         nome no ID 2 tbm que ai da na mesma*/
-        $this->funcionario = 2;
+        $this->funcionario = 1;
     }
 
     public function getFuncionario(){
@@ -34,12 +34,13 @@ require_once("Conexao.php");
     }
     public function cadastrarClassificacao($classificacao){
         $con = Conexao::getConexao();
-        $insert = $con->prepare("INSERT INTO tbclassificacao values(default,?,?,?)");
+        $insert = $con->prepare("INSERT INTO tbclassificacao(descricaoClassificacao,
+        dataCadastro,idFuncionario) values(?,?,?)");
         $insert->bindValue(1,$classificacao->getDescricao());
         $insert->bindValue(2,$classificacao->getDataCadastro());
         $insert->bindValue(3,$classificacao->getFuncionario());
         $insert->execute();
-        return $this->getDescricao().' // '.$this->getFuncionario().' // '.$this->getDataCadastro();
+        return "Era pra td ta bunitin";
     }
 }
 ?>
