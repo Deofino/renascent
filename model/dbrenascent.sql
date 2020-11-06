@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 05-Nov-2020 às 17:15
+-- Tempo de geração: 06-Nov-2020 às 17:56
 -- Versão do servidor: 10.4.14-MariaDB
 -- versão do PHP: 7.4.11
 
@@ -58,16 +58,19 @@ CREATE TABLE `tbclassificacao` (
 
 CREATE TABLE `tbfuncionario` (
   `idFuncionario` int(11) NOT NULL,
-  `nomeFunionario` varchar(100) DEFAULT NULL,
   `cpfFuncionario` char(14) DEFAULT NULL,
-  `dtNascimentoFuncionaio` date DEFAULT NULL
+  `dtNascimentoFuncionaio` date DEFAULT NULL,
+  `emailFuncionario` varchar(100) DEFAULT NULL,
+  `senhaFuncionario` varchar(50) DEFAULT NULL,
+  `nomeFuncionario` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `tbfuncionario`
 --
 
-INSERT INTO `tbfuncionario` (`idFuncionario`, `nomeFunionario`, `cpfFuncionario`, `dtNascimentoFuncionaio`) VALUES(1, 'Deofino', '475.555.252-10', '2003-11-23');
+INSERT INTO `tbfuncionario` (`idFuncionario`, `cpfFuncionario`, `dtNascimentoFuncionaio`, `emailFuncionario`, `senhaFuncionario`, `nomeFuncionario`) VALUES
+(1, '475.555.252-10', '2003-11-23', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -86,6 +89,19 @@ CREATE TABLE `tbobra` (
   `idFuncionario` int(11) DEFAULT NULL,
   `dataCadastro` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tbusuario`
+--
+
+CREATE TABLE `tbusuario` (
+  `idUsuario` int(11) NOT NULL,
+  `nomeUsuario` varchar(100) DEFAULT NULL,
+  `emailUsuario` varchar(100) DEFAULT NULL,
+  `senhaUsuario` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Índices para tabelas despejadas
@@ -121,6 +137,12 @@ ALTER TABLE `tbobra`
   ADD KEY `fkFuncionario` (`idFuncionario`);
 
 --
+-- Índices para tabela `tbusuario`
+--
+ALTER TABLE `tbusuario`
+  ADD PRIMARY KEY (`idUsuario`);
+
+--
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
@@ -140,13 +162,19 @@ ALTER TABLE `tbclassificacao`
 -- AUTO_INCREMENT de tabela `tbfuncionario`
 --
 ALTER TABLE `tbfuncionario`
-  MODIFY `idFuncionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idFuncionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `tbobra`
 --
 ALTER TABLE `tbobra`
   MODIFY `idObra` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `tbusuario`
+--
+ALTER TABLE `tbusuario`
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restrições para despejos de tabelas
