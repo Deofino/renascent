@@ -66,16 +66,8 @@
                 return $this;
         }
 
-        function __construct($titulo,$descricao,$autor,$dataObra
-        ,$classificacao,$periodo,$pais,$funcionario,$dataCadastro)
+        function __construct()
         {
-            $this->titulo = $titulo;
-            $this->descricao = $descricao;
-            $this->autor = $autor;
-            $this->dataObra = $dataObra;
-            $this->classificacao = $classificacao;
-            $this->periodo = $periodo;
-            $this->pais = $pais;
             $this->funcionario = 1;
             $this->dataCadastro = date('Y-m-d');
         }
@@ -83,18 +75,17 @@
                 $con = Conexao::getConexao();
                 $insert = $con->prepare("INSERT INTO tbobra(tituloObra,descricaoObra,idAutor,dataObra,
                 idClassificacao,paisObra,idFuncionario,dataCadastro)
-                 values(?,?,?,?,?,?,?,?,?)");
+                 values(?,?,?,?,?,?,?,?)");
                 $insert->bindValue(1,$obra->getTitulo());
                 $insert->bindValue(2,$obra->getDescricao());
                 $insert->bindValue(3,$obra->getAutor());
                 $insert->bindValue(4,$obra->getDataObra());
                 $insert->bindValue(5,$obra->getClassificacao());
-                $insert->bindValue(6,$obra->getPeriodo());
-                $insert->bindValue(7,$obra->getPais());
-                $insert->bindValue(8,$obra->getFuncionario());
-                $insert->bindValue(9,$obra->getDataCadastro());
+                $insert->bindValue(6,$obra->getPais());
+                $insert->bindValue(7,$obra->getFuncionario());
+                $insert->bindValue(8,$obra->getDataCadastro());
                 $insert->execute();
-                return ;
+                return "ve la no phpmyadmin";
             }
 
     }

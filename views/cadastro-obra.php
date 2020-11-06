@@ -35,19 +35,20 @@
 
             <div class="form-group spacing">
                 <label for="name">Título:</label>
-                <input type="text" name="tituloObra" class="form-control input">
+                <input type="text" name="tituloObra" class="form-control input" required maxlength="60">
             </div>
 
             <div class="form-group spacing">
                 <label for="name">Descrição:</label>
-                <input type="text" name="descricaoObra" class="form-control input">
+                <input type="text" name="descricaoObra" class="form-control input"required maxlength="200">
             </div>
 
             <div class="form-group">
 
                 <div class="form-group spacing">
                     <label for="name">Categoria:</label>
-                    <select name="categoria" class="form-control input">
+                    <select name="categoria" class="form-control input" required>
+                    <option value="null">Selecione</option>
                         <?php
                                 foreach($listaClassificacao as $row){?>
                         <option value="
@@ -63,7 +64,8 @@
 
             <div class="form-group spacing">
                 <label for="name">Autor:</label>
-                <select name="autor" class="form-control input">
+                <select name="autor" class="form-control input" required>
+                <option value="null">Selecione</option>
                     <?php
                         foreach ($listaAutor as $row) {
                             ?><option value="<?php echo($row['idAutor']); ?>"><?php echo($row['nomeAutor']); ?></option>
@@ -75,12 +77,12 @@
             <div class="form-group row">
                 <div class="col spacing">
                     <label for="name">Data de Criação:</label>
-                    <input type="date" min="1300-01-01" name="criacao" max="1700-01-01" class="form-control input">
+                    <input type="date" min="1300-01-01" required name="criacao" max="1700-01-01" class="form-control input">
 
                 </div>
                 <div class="col spacing">
                     <label for="name">País de origem:</label>
-                    <input type="text" name="pais" class="form-control input">
+                    <input type="text" name="pais" class="form-control input" required>
 
                 </div>
             </div>
