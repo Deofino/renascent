@@ -1,7 +1,7 @@
 <?php
         require_once("Conexao.php");
-    class Funcionario{
-        private $nome,$email,$senha,$cpf,$nascimento;
+    class Usuario{
+        private $nome,$email,$senha;
         public function getNome(){
                 return $this->nome;
         }
@@ -39,18 +39,16 @@
                 return $this;
         }
 
-        public function cadastrarFuncionario($funcionario){
+        public function cadastrarUsuario($usuario){
                 $conexao = Conexao::getConexao();
-                $insert = $conexao->prepare("INSERT INTO tbfuncionario(nomeFuncionario,
-                emailFuncionario,senhaFuncionario,cpfFuncionario,dtNascimentoFuncionaio)
-                values (?,?,?,?,?)");
-                $insert->bindValue(1,$funcionario->getNome());
-                $insert->bindValue(2,$funcionario->getEmail());
-                $insert->bindValue(3,$funcionario->getSenha());
-                $insert->bindValue(4,$funcionario->getCpf());
-                $insert->bindValue(5,$funcionario->getNascimento());
+                $insert = $conexao->prepare("INSERT INTO tbusuario(nomeUsuario,
+                emailUsuario,senhaUsuario)
+                values (?,?,?)");
+                $insert->bindValue(1,$usuario->getNome());
+                $insert->bindValue(2,$usuario->getEmail());
+                $insert->bindValue(3,$usuario->getSenha());
                 $insert->execute();
-                return "".$funcionario->getSenha();
+                return "".$usuario->getSenha();
         }
     }
 ?>

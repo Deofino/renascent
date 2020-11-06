@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,9 +12,10 @@
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up-container">
-            <form action="controllers/cadastro.php" method="POST">
+            <form action="controllers/CadastroController.php" method="POST">
                 <h1>Crie sua conta</h1>
-                <span>Entre seus dados <select name="selectCadastrar" class="custom-select sources" placeholder="Cliente">
+                <span>Entre seus dados <select name="selectCadastrar" class="custom-select sources"
+                        placeholder="Cliente">
                         <option value="1">Cliente</option>
                         <option value="2">Funcionario</option>
                     </select></span>
@@ -52,9 +54,9 @@
         </div>
     </div>
 
-	
-	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-	<script src="JS/script.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="JS/script.js"></script>
 </body>
 
 </html>
