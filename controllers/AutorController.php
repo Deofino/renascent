@@ -8,25 +8,27 @@
     if(strtotime($nascimento) < strtotime($falecimento)){
         $anoFalecimento  = date('Y',strtotime($falecimento));
         $anoNascimento  = date('Y',strtotime($nascimento));
-        if(($anoFalecimento - $anoNascimento) >= 110){
+        if(($anoFalecimento - $anoNascimento) >= 120){
             ?>
             <center> <img src="../img/download.png"/>
                <h4>Pessoa muito velha, vai tapear nois não!</h4></center>
            </div>
            <?php
-           echo "erro2";
         }else{
-            
-            $autor = new Autor($nome,$pais,$nascimento,$falecimento);
-            //ve o codigo e importante
+            header("Location: ../views/cadastro-autor.php");
+            $autor = new Autor();
+            $autor->setNome($nome);
+            $autor->setPais($pais);
+            $autor->setNascimento($nascimento);
+            $autor->setFalecimento($falecimento);
             echo $autor->cadastrarAutor($autor);
-
+            
         }
     }else{
         ?>
         <center> <img src="../img/download.png"/>
-           <h4>Pessoa muito velha, vai tapear nois não!</h4></center>
+           <h4>Você realmente tem idade negativa?</h4></center>
        </div>
        <?php
-    }    
+        }    
 ?>

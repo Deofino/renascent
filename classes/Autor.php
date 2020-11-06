@@ -3,12 +3,8 @@
     class Autor{
         private $id,$nome,$pais,$nascimento,$falecimento,$funcionario,$dataCadastro; 
 
-        public function __construct($nome,$pais,$nascimento,$falecimento)
+        public function __construct()
         {
-                $this->nome = $nome;
-                $this->pais = $pais;
-                $this->nascimento = $nascimento;
-                $this->falecimento = $falecimento;
                 $this->dataCadastro = date('Y-m-d');
                 //como ak a gente ta inserindo uma FK, eu coloquei o 2, mas e pq no
                 //meu banco de dados, o funcionario é o 2, no daí talvez tenha que mudar
@@ -86,6 +82,13 @@
                 $insert->bindValue(6,$autor->getFuncionario());
                 $insert->execute();
                 return $autor->getDataCadastro();
+        }
+        public function listarAutor(){
+                $conexao = Conexao::getConexao();
+                $sqlQuery = "select idAutor, nomeAutor from tbautor";
+                $query = $conexao->query($sqlQuery);
+                $lista = $query->fetchAll();
+                return $lista;
         }
        
     }

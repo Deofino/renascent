@@ -9,9 +9,8 @@ require_once("Conexao.php");
             $this->descricao = $descricao;
             return $this;
     }
-    function __construct($descricao)
+    function __construct()
     {
-        $this->descricao = $descricao;
         $this->dataCadastro = date('Y-m-d');
         /*Aqui e a mesma coisa, no meu ta funcionairo ID 2, mas cria o seu e muda ak, ou coloca seu 
         nome no ID 2 tbm que ai da na mesma*/
@@ -32,6 +31,8 @@ require_once("Conexao.php");
             $this->dataCadastro = $dataCadastro;
             return $this;
     }
+
+    
     public function cadastrarClassificacao($classificacao){
         $con = Conexao::getConexao();
         $insert = $con->prepare("INSERT INTO tbclassificacao(descricaoClassificacao,
@@ -40,7 +41,14 @@ require_once("Conexao.php");
         $insert->bindValue(2,$classificacao->getDataCadastro());
         $insert->bindValue(3,$classificacao->getFuncionario());
         $insert->execute();
-        return "Era pra td ta bunitin";
+        return $classificacao->getDescricao();
+    }
+    public function listarClassificacao(){
+        $con = Conexao::getConexao();
+        $select = "select idClassificacao,descricaoClassificacao from tbclassificacao"; 
+        $res = $con->query($select);  
+        $lista = $res->fetchAll();
+        return $lista;  
     }
 }
 ?>

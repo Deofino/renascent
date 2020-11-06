@@ -76,23 +76,25 @@
             $this->classificacao = $classificacao;
             $this->periodo = $periodo;
             $this->pais = $pais;
-            $this->funcionario = $funcionario;
-            $this->dataCadastro = $dataCadastro;
+            $this->funcionario = 1;
+            $this->dataCadastro = date('Y-m-d');
         }
         public function cadastrarObra($obra){
                 $con = Conexao::getConexao();
-                $insert = $con->prepare("INSERT INTO tbobra values(default,?,?,?,?,?,?,?,?,?)");
+                $insert = $con->prepare("INSERT INTO tbobra(tituloObra,descricaoObra,idAutor,dataObra,
+                idClassificacao,paisObra,idFuncionario,dataCadastro)
+                 values(?,?,?,?,?,?,?,?,?)");
                 $insert->bindValue(1,$obra->getTitulo());
                 $insert->bindValue(2,$obra->getDescricao());
                 $insert->bindValue(3,$obra->getAutor());
-                $insert->bindValue(1,$obra->getDataObra());
-                $insert->bindValue(2,$obra->getClassificacao());
-                $insert->bindValue(3,$obra->getPeriodo());
-                $insert->bindValue(1,$obra->getPais());
-                $insert->bindValue(2,$obra->getFuncionario());
-                $insert->bindValue(3,$obra->getDataCadastro());
+                $insert->bindValue(4,$obra->getDataObra());
+                $insert->bindValue(5,$obra->getClassificacao());
+                $insert->bindValue(6,$obra->getPeriodo());
+                $insert->bindValue(7,$obra->getPais());
+                $insert->bindValue(8,$obra->getFuncionario());
+                $insert->bindValue(9,$obra->getDataCadastro());
                 $insert->execute();
-                return $this->getDescricao().' // '.$this->getFuncionario().' // '.$this->getDataCadastro();
+                return ;
             }
 
     }

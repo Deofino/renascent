@@ -1,13 +1,14 @@
 <?php
     require_once("global.php");
-   $select = filter_input(INPUT_POST, 'classificacao', FILTER_SANITIZE_STRING);;
+   $select = filter_input(INPUT_POST, 'categoria', FILTER_SANITIZE_STRING);
     if($select == "null"){
         echo("selecionar uma classificacao");
     }else{
         try {
-            $classificacao = new Classificacao($select);
-             echo $classificacao->cadastrarClassificacao($classificacao);
-
+            $classificacao = new Classificacao();
+            $classificacao->setDescricao($select);
+            echo $classificacao->cadastrarClassificacao($classificacao);
+            header("Location: ../views/cadastro-categoria.php");
         } catch (Exception $e) {
             echo $e->getMessage();
         }

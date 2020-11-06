@@ -49,7 +49,7 @@ if (($_SESSION['email'] != 'adm') ||
 	         	<ul>
 	                  <li><a href="cadastro-autor.php">Autor</a></li>
 	                  <li><a href="cadastro-categoria.php">Categoria</a></li>
-	                  <li><a href="#">Obra</a></li>
+	                  <li><a href="cadastro-obra.php">Obra</a></li>
 	       		</ul>
 			</li>
         </ul>
