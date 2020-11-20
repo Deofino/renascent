@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06-Nov-2020 às 17:56
+-- Tempo de geração: 20-Nov-2020 às 20:37
 -- Versão do servidor: 10.4.14-MariaDB
 -- versão do PHP: 7.4.11
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `dbrenascent`
 --
+CREATE DATABASE IF NOT EXISTS `dbrenascent` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `dbrenascent`;
 
 -- --------------------------------------------------------
 
@@ -53,6 +55,22 @@ CREATE TABLE `tbclassificacao` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `tbfotoobra`
+--
+
+CREATE TABLE `tbfotoobra` (
+  `id` int(11) NOT NULL,
+  `nomeFoto` varchar(100) DEFAULT NULL,
+  `caminhoFoto` varchar(100) DEFAULT NULL,
+  `extensaoFoto` varchar(6) DEFAULT NULL,
+  `idFuncionario` int(11) DEFAULT NULL,
+  `idObra` int(11) DEFAULT NULL,
+  `dataFoto` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `tbfuncionario`
 --
 
@@ -64,13 +82,6 @@ CREATE TABLE `tbfuncionario` (
   `senhaFuncionario` varchar(50) DEFAULT NULL,
   `nomeFuncionario` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Extraindo dados da tabela `tbfuncionario`
---
-
-INSERT INTO `tbfuncionario` (`idFuncionario`, `cpfFuncionario`, `dtNascimentoFuncionaio`, `emailFuncionario`, `senhaFuncionario`, `nomeFuncionario`) VALUES
-(1, '475.555.252-10', '2003-11-23', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -122,6 +133,14 @@ ALTER TABLE `tbclassificacao`
   ADD KEY `fkFuncClassificacao` (`idFuncionario`);
 
 --
+-- Índices para tabela `tbfotoobra`
+--
+ALTER TABLE `tbfotoobra`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idFuncionario` (`idFuncionario`),
+  ADD KEY `idObra` (`idObra`);
+
+--
 -- Índices para tabela `tbfuncionario`
 --
 ALTER TABLE `tbfuncionario`
@@ -159,10 +178,16 @@ ALTER TABLE `tbclassificacao`
   MODIFY `idClassificacao` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de tabela `tbfotoobra`
+--
+ALTER TABLE `tbfotoobra`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de tabela `tbfuncionario`
 --
 ALTER TABLE `tbfuncionario`
-  MODIFY `idFuncionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idFuncionario` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `tbobra`
@@ -191,6 +216,14 @@ ALTER TABLE `tbautor`
 --
 ALTER TABLE `tbclassificacao`
   ADD CONSTRAINT `fkFuncClassificacao` FOREIGN KEY (`idFuncionario`) REFERENCES `tbfuncionario` (`idFuncionario`);
+
+--
+-- Limitadores para a tabela `tbfotoobra`
+--
+ALTER TABLE `tbfotoobra`
+  ADD CONSTRAINT `fk_obra` FOREIGN KEY (`idObra`) REFERENCES `tbobra` (`idObra`),
+  ADD CONSTRAINT `tbfotoobra_ibfk_1` FOREIGN KEY (`idFuncionario`) REFERENCES `tbfuncionario` (`idFuncionario`),
+  ADD CONSTRAINT `tbfotoobra_ibfk_2` FOREIGN KEY (`idObra`) REFERENCES `tbobra` (`idObra`);
 
 --
 -- Limitadores para a tabela `tbobra`

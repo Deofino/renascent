@@ -125,4 +125,11 @@ class Obra
                 $query->bindValue(1, $idObra);
                 $query->execute();
         }
+        public function ListarUltimoID(){
+                $con = Conexao::getConexao();
+                $select = "select max(idObra) as total from tbobra";
+                $res = $con->query($select);
+                $res = $res->fetch();
+                return $res['total'];
+        }
 }

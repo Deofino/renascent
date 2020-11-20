@@ -15,6 +15,18 @@
     $obra->setClassificacao($categoria);
     $obra->setPais($pais);
 
-    echo $obra->cadastrarObra($obra);
+    $obra->cadastrarObra($obra);
+
+    /*Imagem*/
+    $foto = new FotoObra();
+    $new_path = "../img/obras/";
+    $extension = pathinfo($_FILES['foto']['name'],PATHINFO_EXTENSION);
+    $name_photo = uniqid() . '.' .$extension;
+    move_uploaded_file($_FILES['foto']['tmp_name'],$new_path.$name_photo);
+    $foto->setNomeFoto($name_photo);
+    $foto->setCaminhoFoto($new_path.$name_photo);
+    $foto->setExtensaoFoto($extension);
+    $idObra = $obra->ListarUltimoID();
+    $foto->inserirFotoObra($idObra,$foto);
 
 ?>

@@ -31,7 +31,8 @@
 
     <div class="div" style="margin-top: 10px;">
         <h1 class="center">Obra</h1>
-        <form action="../controllers/ObraController.php" method="post" enctype="multipart/form-data">
+        <form action="../controllers/ObraController.php" method="post" 
+        enctype="multipart/form-data">
 
             <div class="form-group spacing">
                 <label for="name">Título:</label>
@@ -91,7 +92,7 @@
 
                 <div class="form-group spacing">
                     <label for="name">Selecione as fotos:</label>
-                    <input type="file"  name="foto" class="input">
+                    <input type="file" name="foto" class="input">
                 </div>
 
             </div>

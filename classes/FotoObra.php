@@ -46,7 +46,27 @@
             $this->dataFoto = date('Y-m-d');
         }
         public function inserirFotoObra($idObra,  $fotoObra){
-
+                $con = Conexao::getConexao();
+                $query = $con->prepare("insert into tbfotoobra (nomeFoto,
+                caminhoFoto,extensaoFoto,idObra,idFuncionario,dataFoto) values(?,?,?,?,?,?)");
+                $query->bindValue(1,$fotoObra->getNomeFoto());
+                $query->bindValue(2,$fotoObra->getCaminhoFoto());
+                $query->bindValue(3,$fotoObra->getExtensaoFoto());
+                $query->bindValue(4,$idObra);
+                $query->bindValue(5,$fotoObra->getFuncionario());
+                $query->bindValue(6,$fotoObra->getDataFoto());
+                $query->execute();
+                return 've o php my admin';
+        }
+        public function listarFotosObra($idObra){
+                $con  = Conexao::getConexao();
+                $query = $con->prepare("select id,nomeFoto,caminhoFoto,extensaoFoto from tbfotoobra
+                        where idObra = ?");
+                        $query->bindValue(1,$idObra);
+                        $query->execute();
+                        $list = $query->fetchAll();
+                        return $list;
+                
         }
 }
 

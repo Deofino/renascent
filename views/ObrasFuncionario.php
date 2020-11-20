@@ -3,6 +3,8 @@
     require_once("../controllers/global.php");
     $obra = new Obra();
     $listaObra = $obra->listarObras();
+    $foto = new FotoObra();
+    
 
 ?>
 <!DOCTYPE html>
@@ -58,8 +60,18 @@
         justify-content: space-around;
     }
 
-    .card{padding: 10px;margin: 10px;}
-
+    input {
+        text-align: center;
+    }
+    .slide{
+        display: flex;
+        flex-shrink: 300px;
+    }
+    .card {
+        padding: 10px;
+        margin: 10px;
+    }
+    .foto{width: 100%;height: 250px;}
     </style>
 </head>
 
@@ -83,15 +95,21 @@
                 /*aqui muda os campos estilizem deixem bonito com css e responsivo
                 leiam esse codigo que ta facil funcionando so bota assim
                 */
-                ?><div class="card" id="<?php echo['idObra']; ?>">
-                    <div class="slide" style="width:100%;height:250px;background:url('../img/fundo.png');margin: 10px;"></div>
-                     <h3>Title: <?php echo($row['tituloObra']); ?></h3>
-                     <h3>Descrição: <?php echo($row['descricaoObra']); ?></h3>
-                     <h3>Autor: <?php echo($row['nomeAutor']); ?></h3>
-                     <h3>Categoria: <?php echo($row['descricaoClassificacao']); ?></h3>
-                     <h3>Data: <?php echo($row['dataObra']); ?></h3>
-                     <h3>Pais: <?php echo($row['paisObra']); ?></h3>
-                </div>
+                $listaFotoObra = $foto->listarFotosObra($row['idObra']);
+                ?><div class="card">
+            <div class="slide" style="width:250px;height:250px;margin: 10px;">
+                <img src="<?php foreach ($listaFotoObra as $foto) {
+                       echo $foto['caminhoFoto'];
+                    } ?>" class="foto" alt="Foto">
+            </div>
+            <h3>Title: <?php echo($row['tituloObra']); ?></h3>
+            <h3>Descrição: <?php echo($row['descricaoObra']); ?></h3>
+            <h3>Autor: <?php echo($row['nomeAutor']); ?></h3>
+            <h3>Categoria: <?php echo($row['descricaoClassificacao']); ?></h3>
+            <h3>Data: <?php echo($row['dataObra']); ?></h3>
+            <h3>Pais: <?php echo($row['paisObra']); ?></h3>
+            <a href="../controllers/deletarObra.php?idObra=<?php echo $row['idObra']?>">Deletar</a>
+        </div>
         <?php
             }
 
