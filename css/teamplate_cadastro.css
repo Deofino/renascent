@@ -5,3 +5,4 @@ body{background-image: url(../img/bg.png);font-family: Lucida Sans ;}
 .spacing{margin: 15px;}
 label{font-weight: bold;font-size: 20px;letter-spacing: 1.05px;color:rgb(56, 43, 0) ;}
 .input{font-size: 18px;letter-spacing: 1.1px;padding: 6px;color: #000;font-weight: normal;}
+.file{font-size: 14px;}

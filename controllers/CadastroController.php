@@ -12,6 +12,7 @@
         $usuario->setEmail($email);
         $usuario->setSenha($senha);
         echo $usuario->cadastrarUsuario($usuario);
+        header('Location: ../index.php');
     }else if($select == 2){
         //cadastro funcionario
         $funcionario = new Funcionario();
@@ -19,6 +20,7 @@
         $funcionario->setEmail($email);
         $funcionario->setSenha($senha);
         echo $funcionario->cadastrarFuncionario($funcionario);
+        header('Location: ../index.php');
     }else{
         echo("<script>alert('Erro aqui hein')</script>");
     }

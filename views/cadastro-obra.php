@@ -29,9 +29,9 @@
 
 <body>
 
-    <div class="div" style="margin-top: 80px;">
+    <div class="div" style="margin-top: 10px;">
         <h1 class="center">Obra</h1>
-        <form action="../controllers/ObraController.php" method="post">
+        <form action="../controllers/ObraController.php" method="post" enctype="multipart/form-data">
 
             <div class="form-group spacing">
                 <label for="name">Título:</label>
@@ -85,6 +85,15 @@
                     <input type="text" name="pais" class="form-control input" required>
 
                 </div>
+            </div>
+
+            <div class="form-group">
+
+                <div class="form-group spacing">
+                    <label for="name">Selecione as fotos:</label>
+                    <input type="file"  name="foto" class="input">
+                </div>
+
             </div>
 
             <div class="row">
