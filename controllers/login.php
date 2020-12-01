@@ -12,7 +12,10 @@
             $_SESSION['password'] = $password;
             
         }else{
-            header("Location: ../index.php");
+            echo ("
+        <script>alert('E-mail ou senha incorretos')
+            alert('Cliente: email->user, password: 123 // Funcionario: email->adm , password:123')
+            location.href = '../index.php'</script>");
         }
     }else if($select == 2){
         //entra funcionario
@@ -22,6 +25,15 @@
             $_SESSION['email'] = $email;
             $_SESSION['password'] = $password;
         }else{
-            header("Location: ../index.php");
+            echo ("
+        <script>alert('E-mail ou senha incorretos')
+            alert('Cliente: email->user, password: 123 // Funcionario: email->adm , password:123')
+            location.href = '../index.php'</script>");
         }
+    }else{
+        echo ("
+        <script>alert('E-mail ou senha incorretos')
+            alert('Cliente: email->user, password: 123 // Funcionario: email->adm , password:123')
+            location.href = '../index.php'</script>");
     }
+    ?>

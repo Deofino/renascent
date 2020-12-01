@@ -9,26 +9,34 @@
         $anoFalecimento  = date('Y',strtotime($falecimento));
         $anoNascimento  = date('Y',strtotime($nascimento));
         if(($anoFalecimento - $anoNascimento) >= 120){
-            ?>
-            <center> <img src="../img/download.png"/>
-               <h4>Pessoa muito velha, vai tapear nois não!</h4></center>
-           </div>
-           <?php
+            echo ("<script>
+                location.href = '../views/cadastro-autor.php';
+                prompt('Mais de 120 anos? bota seu email aqui mano namoral kkk');
+            </script>");
         }else{
-            header("Location: ../views/cadastro-autor.php");
-            $autor = new Autor();
-            $autor->setNome($nome);
-            $autor->setPais($pais);
-            $autor->setNascimento($nascimento);
-            $autor->setFalecimento($falecimento);
-            echo $autor->cadastrarAutor($autor);
-            
+            try {
+                $autor = new Autor();
+                $autor->setNome($nome);
+                $autor->setPais($pais);
+                $autor->setNascimento($nascimento);
+                $autor->setFalecimento($falecimento);
+                echo $autor->cadastrarAutor($autor);
+                echo ("<script>
+                    location.href = '../views/cadastro-autor.php';
+                    alert('Autor cadastrado com sucesso!');
+                </script>");
+            } catch (Exception $e) {
+                echo ("<script>
+                location.href = '../views/cadastro-autor.php';
+                alert('Ops, algo de errado...');
+            </script>");
+            }
+           
         }
     }else{
-        ?>
-        <center> <img src="../img/download.png"/>
-           <h4>Você realmente tem idade negativa?</h4></center>
-       </div>
-       <?php
+        echo ("<script>
+        location.href = '../views/cadastro-autor.php';
+        alert('Idade negativa bro, veio do futuro?');
+    </script>");
         }    
 ?>

@@ -12,7 +12,9 @@
         $usuario->setEmail($email);
         $usuario->setSenha($senha);
         echo $usuario->cadastrarUsuario($usuario);
-        header('Location: ../index.php');
+        echo ("
+        <script>alert('Funcionario cadastrado com sucesso!!');
+      location.href = '../index.php'</script>");
     }else if($select == 2){
         //cadastro funcionario
         $funcionario = new Funcionario();
@@ -20,9 +22,11 @@
         $funcionario->setEmail($email);
         $funcionario->setSenha($senha);
         echo $funcionario->cadastrarFuncionario($funcionario);
-        header('Location: ../index.php');
+        echo ("
+              <script>alert('Funcionario cadastrado com sucesso!!');
+            location.href = '../index.php'</script>");
     }else{
-        echo("<script>alert('Erro aqui hein')</script>");
+        echo("<script>alert('Erro aqui hein');location.href = '../index.php'</script>");
     }
 
 ?>

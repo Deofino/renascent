@@ -22,7 +22,7 @@ if (($_SESSION['email'] != 'adm') ||
 <body>
 
     <div class="div">
-        <h1 class="center">Autor</h1>
+        <h1 class="center">Categoria</h1>
         <form action="../controllers/ClassificacaoController.php" method="post" class="form-group spacing">
             <label for="type">Tipo categoria:</label>
             <select name="categoria" class="form-control input" id="">

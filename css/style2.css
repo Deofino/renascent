@@ -82,6 +82,13 @@ a:hover{
     width: 100%;
     padding-top: 30px;
     z-index: 999;
+    transition: all .2s ease-in-out;
+}
+.onTop {
+    background-color: rgba(255, 255, 255, 0);
+}
+.scroll {
+    background-color: rgba(0, 0, 0,0.95);
 }
 .header .logo img{
     max-width: 200px;
