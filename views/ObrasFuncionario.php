@@ -95,23 +95,27 @@
                 /*aqui muda os campos estilizem deixem bonito com css e responsivo
                 leiam esse codigo que ta facil funcionando so bota assim
                 */
-                $listaFotoObra = $foto->listarFotosObra($row['idObra']);
-                ?><div class="card">
-            <div class="slide" style="width:250px;height:250px;margin: 10px;">
-                <img src="<?php foreach ($listaFotoObra as $foto) {
-                       echo $foto['caminhoFoto'];
-                    } ?>" class="foto" alt="Foto">
-            </div>
-            <h3>Title: <?php echo($row['tituloObra']); ?></h3>
-            <h3>Descrição: <?php echo($row['descricaoObra']); ?></h3>
-            <h3>Autor: <?php echo($row['nomeAutor']); ?></h3>
-            <h3>Categoria: <?php echo($row['descricaoClassificacao']); ?></h3>
-            <h3>Data: <?php echo($row['dataObra']); ?></h3>
-            <h3>Pais: <?php echo($row['paisObra']); ?></h3>
-            <a href="../controllers/deletarObra.php?idObra=<?php echo $row['idObra']?>">Deletar</a>
+                $listaFotoObra = $foto->listarFotosObra($row['idObra']); ?>
+                <div class="card">
+                <?php 
+                    foreach ($listaFotoObra as $rowObra) {
+                        ?>
+                            <img src="<?php
+                                echo $rowObra['caminhoFoto'];
+                            ?>"
+                             alt="Foto obra" style="max-width:300px;max-height:300px">  
+                        <?php
+                    };
+                ?>
+                <h3>Title: <?php echo($row['tituloObra']); ?></h3>
+                <h3>Descrição: <?php echo($row['descricaoObra']); ?></h3>
+                <h3>Autor: <?php echo($row['nomeAutor']); ?></h3>
+                <h3>Categoria: <?php echo($row['descricaoClassificacao']); ?></h3>
+                <h3>Data: <?php echo($row['dataObra']); ?></h3>
+                <h3>Pais: <?php echo($row['paisObra']); ?></h3>
         </div>
         <?php
-            }
+            };
 
         ?>
 

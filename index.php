@@ -25,6 +25,7 @@
                 <button class="fonteBtn">Cadastrar</button>
             </form>
         </div>
+        
         <div class="form-container sign-in-container">
             <form method="post" action="controllers/login.php">
                 <h1>Entrar</h1>

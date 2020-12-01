@@ -84,7 +84,7 @@ if (($_SESSION ['email'] != 'user') ||
 
     <!--CARD-->
 
-    
+    <?php include_once('teste.php');  //incluindo carrossel?>
     
 <!--FIM-CARD-->
  

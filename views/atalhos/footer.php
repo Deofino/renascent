@@ -2,7 +2,7 @@
 			<div class="wrapper">
 				<div class="footer-box">
 					<div class="company-footer">
-						<img src="../IMGS/Prancheta 1.png" width="180px">
+						<img src="../img/Prancheta1.png" width="180px">
 					
 						<p>Sua arte preferida em forma digital.</p>
 					</div>

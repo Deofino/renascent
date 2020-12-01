@@ -98,7 +98,8 @@ if (($_SESSION['email'] != 'adm') ||
 
     <!--CARD-->
 
-
+    <?php include_once('teste.php');  //incluindo carrossel?>
+    
 
     <!--FIM-CARD-->
 
