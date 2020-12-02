@@ -5,6 +5,7 @@
 		background-color: #fff;
 		display: flex;
 		flex-wrap: nowrap;
+		width: 100%;
 		flex-direction: row;
 		padding: 20px 50px;
 		justify-content: space-between;
@@ -72,9 +73,13 @@
 		font-size: 1.2rem;
 		display: flex;
 		margin: 0 auto;
+		align-items: center;
 		padding-top: 20px;
 		justify-content: space-between;
 		width: 40%;
+	}
+	.ul-redes .item-rede i{
+		padding: 5px;
 	}
 	
 	li:hover, a:hover{
@@ -101,6 +106,7 @@
 	}
 	}
 	</style>
+    <link rel="stylesheet" type="text/css" href="../css/fonta/fontawesome-all.min.css">
 <footer>
 
 	<div class="logo-msg">

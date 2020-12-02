@@ -60,8 +60,15 @@
         }
         public function listarFotosObra($idObra){
                 $con  = Conexao::getConexao();
-                $query = $con->prepare("select id,nomeFoto,caminhoFoto,extensaoFoto from tbfotoobra
+                $query = $con->prepare("select id,nomeFoto,idObra,caminhoFoto,extensaoFoto from tbfotoobra
                         where idObra = ?");
+
+                        /*se verem eu decidi nao retorna o cod da obra
+                                mas da pra eu retorna e ver qual 
+                                olhem
+
+                                certo?
+                        */
                         $query->bindValue(1,$idObra);
                         $query->execute();
                         $list = $query->fetchAll();

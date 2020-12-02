@@ -42,7 +42,7 @@
 
                     <div class="categoria">
                         <label for="Categoria">Categoria:</label>
-                        <select name="" id="">
+                        <select name="select" id="select" aria-placeholder="Selecione">
                             <option value="0">Selecione</option>
                             <option value="1">Bug ou erros</option>
                             <option value="2">Dica</option>
@@ -70,13 +70,12 @@
 
 
         </div>
+        <br><br>
     </main>
 
-
-    <?php include_once('./atalhos/footer.php'); ?> 
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="../JS/script1.js"></script>
+    
+    <?php
+         require_once('./atalhos/footer.php');
+        ?>
 </body>
 </html>

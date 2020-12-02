@@ -117,6 +117,11 @@ class Obra
                 join tbclassificacao on tbclassificacao.idClassificacao = tbobra.idClassificacao";
                 $res = $con->query($select);
                 $lista = $res->fetchAll();
+                /*nao devem ter reparado 
+                        mas tem um inner join nessa linha
+                        pra pega o nome do autor, nome da categoria tlgd
+                */
+                //pegar todos os dados allllllllll
                 return $lista;
         }
         public function deleteObra($idObra){
@@ -130,6 +135,14 @@ class Obra
                 $select = "select max(idObra) as total from tbobra";
                 $res = $con->query($select);
                 $res = $res->fetch();
+                //ja que eu so quero uma linha
+                //isso?
+                //tipo? num tendi
+
+                //aqui eu retorno  a ultima obra
+
+                //retorn o fetch
+                // o alias
                 return $res['total'];
         }
 }

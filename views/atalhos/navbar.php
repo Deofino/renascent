@@ -80,6 +80,7 @@
   .menuzin li ul {
     position: absolute;
     top: 30px;
+    background-color: rgba(0, 0, 0, 0.2);
     left: 0;
     padding-top: 10px;
     display: none;
@@ -102,9 +103,6 @@
     z-index: 999;
     -webkit-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
-  }
-  
-  .onTop {
     background-color: rgba(0, 0, 0, 0.2);
   }
   
@@ -253,7 +251,7 @@
                 <ul>
                     <li><a href="index-funcionario.php">Home</a></li>
                     <li><a href="ObrasFuncionario.php">Obras</a></li>
-                    <li><a href="Contato.html">Contato</a></li>
+                    <li><a href="Contato.php">Contato</a></li>
                     <li><a href="../controllers/logout.php">Sair</a></li>
                     <ul class="menuzin">
                         <li><a href="#">Cadastrar</a>
@@ -271,7 +269,6 @@
         </div>
     </header>
 
-    
 
 <script>
     let onTop = false;
@@ -297,3 +294,6 @@
     }
 
 </script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="../js/script1.js"></script>

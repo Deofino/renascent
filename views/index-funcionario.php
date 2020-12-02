@@ -66,6 +66,8 @@ if (($_SESSION['email'] != 'adm') ||
     <?php include_once('teste.php');  //incluindo carrossel?>
     
 
+    <?php include_once('atalhos/imagensHome.php'); ?>
+
     <!--FIM-CARD-->
 
     <!--FOOTER-->
@@ -75,9 +77,6 @@ if (($_SESSION['email'] != 'adm') ||
 
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="../JS/script1.js"></script>
 </body>
 
 </html>
