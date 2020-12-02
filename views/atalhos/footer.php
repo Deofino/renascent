@@ -86,6 +86,7 @@
 		}
 		footer .logo-msg, .meio,  .final{
 			width: 90%;
+			margin: 0 auto;
 			background-color: #eee;
 			margin-bottom: 25px;
 		}
@@ -93,6 +94,10 @@
 			order: 3;
 			border: none
 		}
+		.prancheta{
+			width: 100%;
+			max-width: 300px;
+	}
 	}
 	</style>
 <footer>

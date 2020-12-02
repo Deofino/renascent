@@ -6,8 +6,10 @@ tirando os espaços*/
 body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: inherit;/*pega o tamanho da fonte do navegador*/
-    background: #daa520;
-
+    background: url(../img/fundo.png);
+    background-size: cover;/*ajusta a imagem junto do box*/
+    background-position: center;
+    background-attachment: fixed;
 }
 
 input, select, iframe, button {
@@ -46,6 +48,7 @@ a:hover{
 /*HEADER
 ------------------------------------------*/
 /*DROPDWON*/
+/*
 .menuzin{
     list-style:none;
     float:left;
@@ -99,11 +102,7 @@ a:hover{
 .search-box{
     text-align: center;
     color: #ffffff;
-    padding: 100px 0;
-    background: url('../img/fundo.png');
-    background-size: cover;/*ajusta a imagem junto do box*/
-    background-position: center;
-    background-attachment: fixed;
+    
 }
 
 .search-box h1{
@@ -181,6 +180,7 @@ a:hover{
 ------------------------------------------*/
 @media(max-width:767.9px){
     /*MENU*/
+    /*
     .nav-toggle{
         color: #fff;
         font-size: 22px;
@@ -210,6 +210,7 @@ a:hover{
     }
     /*estatisticas*/
     .estatisticas{
+        margin: 20px auto;
         flex-direction: column;/*vai virar uma coluna*/ 
     }
 
@@ -232,6 +233,7 @@ a:hover{
 ------------------------------------------*/
 @media(min-width:768px){/*quando chegar em 169px, vai acontecer isso*/
     /*MENU*/
+    /*
     .nav-toggle, .nav-close{
         display: none;
     }
@@ -253,7 +255,7 @@ a:hover{
 
      /*Search*/
     .search-box{
-        padding: 200px 0;
+        padding: 50px 0 200px 0;
     }
       /*estatisticas*/
     .estatisticas{
@@ -274,6 +276,7 @@ a:hover{
 
 
 /* footer */
+/*
 footer {
 	background-color: #f5f5f5;
 	padding: 5em 0;
