@@ -1,4 +1,5 @@
-<footer>
+<?php 
+	/*<footer>
 			<div class="wrapper">
 				<div class="footer-box">
 					<div class="company-footer">
@@ -52,8 +53,21 @@
 					</ul>
 				</div>
       </div>
-      <div class="hr">  
-      <hr>
-    </div>
 			</div>
-		</footer>
+		</footer>*/
+?>
+
+<footer>
+
+	<div class="logo-msg">
+
+		<div class="image">
+			<img src="../img/Prancheta1.png" alt="Prancheta1">
+		</div>
+		<div class="txt">
+			<p>Sua arte preferida em forma digital.</p>
+		</div>
+
+	</div>
+
+</footer>

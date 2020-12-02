@@ -1,0 +1,139 @@
+*{
+    margin: 0%;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poopins', 'Arial', sans-serif;
+    color: black;
+    background-color: #ddd;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+header{
+    height: 100px;
+    width: 100%;
+    background-color: #999;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
+    padding: 10px 20px;
+}
+header div:first-child img{
+    max-width: 150px;
+    width: 100%;
+    height: 100%;
+    max-height: 150px;
+}
+header nav ul{
+    display: flex;
+}
+header nav ul > li{
+    width: 25%;
+    margin: 0 10px;
+}
+header nav ul li a{
+    font-size: 1.1em;
+    padding: 10px 10px;
+}
+header nav ul li a:hover{
+    font-size: 1.1em;
+    opacity: .7;
+}
+
+header nav ul li ul{
+    display: none;
+    position: relative;
+    transition: .5s ease-in-out;
+}
+header nav ul .dropdown:hover ul{
+    display: block;
+    position: absolute;
+    margin-top: 10px;
+    transition: .5s ease-in-out;
+    background-color: #999;
+    border: 1.3px solid #444;
+}
+header nav ul .dropdown:hover ul li{
+    padding: 15px;
+    transition: .5s ease-in-out;
+    width: 100%;
+}
+
+@media (max-width: 700px){
+    header{
+        width: 100%;
+        position: relative;
+        max-width: 700px;
+    }
+    header div{
+        z-index: 5;
+    }
+    header nav{
+        position: absolute;
+        /*top: -1000%;*/
+    }
+    header nav {
+        height: 100%;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        max-height: 100vh;
+        display: flex;
+        padding-top: 150px;
+        background-color: #888;
+    }
+    header nav ul{
+        width: 100%;
+        flex-wrap: nowrap;
+        display: flex;
+        flex-direction: column;
+    }
+    header nav ul li{
+        width: 100%;
+        text-align: center;
+        cursor: pointer;
+        margin: 0;
+        padding: 30px 0;
+    }
+    header nav ul li a{
+        width: 100%;
+        padding: 20px 40px;
+    }
+    header nav ul li:hover{
+        background-color: #ddd;
+    }
+    
+    header > div:nth-child(2){
+        background-color: #555;
+        cursor: pointer;
+        z-index: 6;
+        border: 1px solid #222;  
+    }
+    header .hamburger{
+        width: 50px;
+        height: 50px;
+        display: flex;
+        border-radius: 5px;
+        padding: 8px 0;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    header .hamburger div{
+        width: 80%;
+        border-radius: 10px;
+        height: 4px;
+        background-color: #222;
+    }
+   
+    
+}

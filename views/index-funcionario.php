@@ -41,9 +41,9 @@ if (($_SESSION['email'] != 'adm') ||
                     </span>
                 </p>
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="index-funcionario.php">Home</a></li>
                     <li><a href="ObrasFuncionario.php">Obras</a></li>
-                    <li><a href="#">Contato</a></li>
+                    <li><a href="Contato.html">Contato</a></li>
                     <li><a href="../controllers/logout.php">Sair</a></li>
                     <ul class="menuzin">
                         <li><a href="#">Cadastrar</a>
