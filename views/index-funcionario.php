@@ -28,7 +28,7 @@ if (($_SESSION['email'] != 'adm') ||
     <!-- end / HEADER-->
 
     <!-- start SEARCH E ESTRATISTICAS-->
-    <section class="section">
+    <section class="section" >
         <div class="search-box">
             <header>
                 <h1>Renascent</h1>

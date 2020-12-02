@@ -110,6 +110,7 @@
   
   .scroll {
     background-color: #0a0700f6;
+    
   }
   
   .header .logo img {

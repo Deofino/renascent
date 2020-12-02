@@ -92,7 +92,8 @@
 		}
 		footer .meio{
 			order: 3;
-			border: none
+			border: none;
+			margin-bottom: 0px;
 		}
 		.prancheta{
 			width: 100%;
