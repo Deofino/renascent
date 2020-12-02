@@ -20,7 +20,7 @@ body {
   background-attachment: fixed;
 }
 
-input, select, iframe, button {
+input, iframe, button {
   border: none;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -95,7 +95,7 @@ main .l-main form div {
   padding: 5px 10px;
 }
 
-main .l-main form div input, main .l-main form div select {
+main .l-main form div input{
   width: 80%;
   height: 30px;
   padding: 15px 10px;
@@ -141,7 +141,13 @@ main .l-main form .button button {
 main .l-main form .button button:hover {
   opacity: 1;
 }
-
+.categoria > select{
+  width: 80%;
+  padding: 5px 10px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  border: 1px solid #222;
+}
 @media screen and (max-width: 750px) {
   main .l-main {
     border-radius: 10px;
@@ -216,107 +222,3 @@ main .l-main form .button button:hover {
     opacity: 1;
   }
 }
-
-/*
-footer {
-	background-color: #f5f5f5;
-}
-
-footer h2, footer p, footer a, footer span {
-	color: #daa520;
-}
-
-footer h2 {
-	font-weight: 400;
-}
-
-footer a {
-	text-decoration: none;
-}
-
-footer ul {
-	padding: 0;
-}
-
-footer li {
-	list-style: none;
-}
-
-.footer-box {
-	width: 31%;
-	padding: 1%;
-	float: left;
-}
-
-
-footer .wrapper:after {
-	clear: both;
-	content: "";
-    display: block;
-    
-}
-
-.company-footer {
-	width: 80%;
-}
-
-.company-footer h2 {
-  margin-top: 20px;
-  margin-left: 20px;
-}
-
-.company-footer h2, .company-footer p {
-	margin-bottom: 20px;
-}
-
-.footer-list li {
-	margin-bottom: 15px;
-}
-
-.footer-list a {
-	transition: 0.5s;
-}
-
-.footer-list a:hover {
-	color: #000;
-}
-
-.footer-list li:after {
-	clear: both;
-	content: "";
-	display: block;
-}
-
-.articles-footer {
-	width: 80%;
-}
-
-.footer-list.footer-article-list span {
-	display: block;
-	float: none;
-}
-
-.fab {
-	font-size: 30px;
-	margin-right: 10px;
-	float: left;
-}
-
-.footer-list li span {
-	float: left;
-	height: 30px;
-	line-height: 30px;
-}
-
-.footer-bottom {
-	border-top: 1px solid #B2B2B2;
-}
-
-.footer-bottom p {
-	font-weight: 600;
-	margin-top: 40px;
-}
-
-
-*/
-/*# sourceMappingURL=contato.css.map */
