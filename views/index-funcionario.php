@@ -119,30 +119,6 @@ if (($_SESSION['email'] != 'adm') ||
 
 
 
-<script>
-    let onTop = false;
-    let navbar = document.querySelector('.header');
-    let menuzin = document.querySelector('.menuzinhu');
-    window.onscroll = function(evt){
-        if(window.scrollY < 10 && !onTop){
-            onTop = true;
-            navbar.classList.add('onTop');            
-            navbar.classList.remove('scroll');      
-            menuzin.classList.add('onTop');            
-            menuzin.classList.remove('scroll');            
-        }
-        if(window.scrollY > 500 && onTop){
-            onTop = false;
-            navbar.classList.add('scroll')
-            navbar.classList.remove('onTop');
-            menuzin.classList.add('scroll')
-            menuzin.classList.remove('onTop');            
-
-        }
-    }
-
-</script>
-
 
 <?php /*<div class="container" id="container">
         <div class="form-container sign-up-container">

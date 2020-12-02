@@ -9,44 +9,9 @@
 </head>
 <body>
     
-    <header class="header scroll">
-        <div class="content">
-            <div class="logo fl-left">
-                <a href="#">
-                    <img src="../img/logoPreta.png" alt="HTML e CSS Pro" />
-                </a>
-            </div>
-
-            <a href="#" class="nav-toggle fl-rigth">
-                <i class="fas fa-bars"></i> MENU
-            </a>
-
-            <nav class="nav">
-                <p class="text-rigth">
-                    <span class="nav-close">
-                        <i class="fas fa-times"></i>
-                    </span>
-                </p>
-                <ul>
-                    <li><a href="index-funcionario.php">Home</a></li>
-                    <li><a href="ObrasFuncionario.php">Obras</a></li>
-                    <li><a href="Contato.html">Contato</a></li>
-                    <li><a href="../controllers/logout.php">Sair</a></li>
-                    <ul class="menuzin">
-                        <li><a href="#">Cadastrar</a>
-                            <ul class="menuzinhu scroll">
-                                <li><a href="cadastro-autor.php">Autor</a></li>
-                                <li><a href="cadastro-categoria.php">Categoria</a></li>
-                                <li><a href="cadastro-obra.php">Obra</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-
-
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <?php
+        require_once('./atalhos/navbar.php')
+    ?>
     
     <main>
 
