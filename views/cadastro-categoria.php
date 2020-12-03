@@ -14,8 +14,8 @@ if (($_SESSION['email'] != 'adm') ||
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Renascent</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link href="../css/teamplate_cadastro.css" type="text/css" rel="stylesheet">
+    <link href="../css/cadastros.css" type="text/css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -26,12 +26,23 @@ if (($_SESSION['email'] != 'adm') ||
     <main class="main">
 
         <div class="contet">
-            <h1 class="txt-center">Autor</h1>
-            <form class="formulario" action="../controllers/AutorController.php" method="post">
+            <h1 class="txt-center">Categoria</h1>
+            <form class="formulario" action="../controllers/ClassificacaoController.php" method="post">
 
                 <div class="form-item div-center full">
-                    <label for="nome" class="label">Categoria:</label>
-
+                    <label for="nome" class="label">Escolha:</label>
+                    <select name="categoria" class="form-control input" id="">
+                        <option value="null">Selecione</option>
+                        <option value="Escultura">Escultura</option>
+                        <option value="Pintura">Pintura</option>
+                        <option value="Musica">Musica</option>
+                        <option value="Vitral">Vitral</option>
+                        <option value="Dança">Dança</option>
+                        <option value="Cinema">Cinema</option>
+                        <option value="Teatro">Teatro</option>
+                        <option value="Arte Digital">Arte Digital</option>
+                        <option value="Arquitetonica">Arquitetonica</option>
+                    </select>
                 </div>
 
                 <div class="form-item div-right div-center full">
