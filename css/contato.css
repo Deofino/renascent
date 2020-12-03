@@ -221,4 +221,14 @@ main .l-main form .button button:hover {
   main .l-main form .button button:hover {
     opacity: 1;
   }
+
+  
+.categoria > select{
+  width: 100%;
+  padding: 5px 10px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  border: 1px solid #222;
+}
+
 }

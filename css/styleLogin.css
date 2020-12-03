@@ -6,15 +6,14 @@
 
 body {
 	background: url(../img/bg.png);
-	background-size: 150%;
+	background-position: center center;
 	background-repeat: no-repeat;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	padding-top: 100px;
 	flex-direction: column;
 	font-family: Lucida Sans;
-	height: 90vh;
-	margin: -20px 0 50px;
 }
 
 h1 {

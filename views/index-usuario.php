@@ -19,35 +19,9 @@ if (($_SESSION ['email'] != 'user') ||
 
   <body>
 
-	<header class="header">
-    <div class="content">
-      <div class="logo fl-left">
-        <a href="#">
-          <img src="../img/logoPreta.png" alt="HTML e CSS Pro"/>
-        </a>
-      </div>
-
-      <a href="#" class="nav-toggle fl-rigth">
-        <i class="fas fa-bars"></i> MENU
-      </a>
-
-      <nav class="nav active">
-        <p class="text-rigth">
-        <span class="nav-close">
-          <i class="fas fa-times"></i>
-        </span>
-       </p>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Obras</a></li>
-          <li><a href="#">Contato</a></li>
-          <li><a href="../controllers/logout.php">Sair</a></li>
-          
-        </ul>
-      </nav>
-    </div>
-    </header>
-    <!-- end / HEADER-->
+    <?php
+      include_once('./atalhos/navbar.php');
+    ?>
 
     <!-- start SEARCH E ESTRATISTICAS-->
       <section class="section">
@@ -92,10 +66,6 @@ if (($_SESSION ['email'] != 'user') ||
     <?php include_once('atalhos/footer.php');  //incluindo footer?>
     <!--FIM-FOOTER-->
 
-      
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="../JS/script1.js"></script>
   </body>
 </html>
