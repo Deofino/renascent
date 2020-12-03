@@ -14,13 +14,39 @@ if (($_SESSION['email'] != 'adm') ||
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Renascent</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link href="../css/teamplate_cadastro.css" type="text/css" rel="stylesheet">
 </head>
 
 <body>
+    <?php
+    include_once('./atalhos/navbar.php');
+    ?>
 
+    <main class="main">
+
+        <div class="contet">
+            <h1 class="txt-center">Autor</h1>
+            <form class="formulario" action="../controllers/AutorController.php" method="post">
+
+                <div class="form-item div-center full">
+                    <label for="nome" class="label">Categoria:</label>
+
+                </div>
+
+                <div class="form-item div-right div-center full">
+                    <button type="submit" class="btn_enviar">Enviar</button>
+                </div>
+
+            </form>
+        </div>
+
+    </main>
+
+    <?php
+    include_once('./atalhos/footer.php');
+    ?>
+    <!--
     <div class="div">
         <h1 class="center">Categoria</h1>
         <form action="../controllers/ClassificacaoController.php" method="post" class="form-group spacing">
@@ -46,7 +72,7 @@ if (($_SESSION['email'] != 'adm') ||
             </div>
         </form>
 
-    </div>
+    </div>-->
 
 </body>
 

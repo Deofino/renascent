@@ -1,11 +1,14 @@
 
 	<style>
-		
+		body{
+			color: #333;
+		}
 	footer{
-		background-color: #fff;
+		background-color: #eee;
 		display: flex;
 		flex-wrap: nowrap;
 		width: 100%;
+		margin-top: 100px;
 		flex-direction: row;
 		padding: 20px 50px;
 		justify-content: space-between;
@@ -83,7 +86,7 @@
 	}
 	
 	li:hover, a:hover{
-		color: #daa520;
+		color: #daa520 ;
 	}
 	@media screen and (max-width: 750px) {
 		footer{
@@ -91,9 +94,9 @@
 		}
 		footer .logo-msg, .meio,  .final{
 			width: 90%;
-			margin: 0 auto;
+			margin: 15px auto;
+			border-bottom: 1px solid #222;
 			background-color: #eee;
-			margin-bottom: 25px;
 		}
 		footer .meio{
 			order: 3;

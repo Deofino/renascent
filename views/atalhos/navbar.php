@@ -126,6 +126,9 @@
   ------------------------------------------*/
   @media (max-width: 767.9px) {
     /*MENU*/
+    i{
+      font-size: 1.5em;
+    }
     .nav-toggle {
       color: #fff;
       padding-top: 20px;
@@ -239,7 +242,7 @@
             </div>
 
             <a href="#" class="nav-toggle fl-rigth">
-                <i class="fas fa-bars"></i> MENU
+                <i class="fas fa-bars"></i>
             </a>
 
             <nav class="nav">
