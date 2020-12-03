@@ -56,5 +56,6 @@
     }
     
     echo "<script>alert('Obra cadastrada com sucesso!');
-            location.href = '../views/cadastro-obra.php';</script>";
+            location.href = '../views/cadastro-obra.php';
+            </script>";
 ?>

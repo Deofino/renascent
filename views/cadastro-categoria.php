@@ -31,17 +31,17 @@ if (($_SESSION['email'] != 'adm') ||
 
                 <div class="form-item div-center full">
                     <label for="nome" class="label">Escolha:</label>
-                    <select name="categoria" class="form-control input" id="">
-                        <option value="null">Selecione</option>
-                        <option value="Escultura">Escultura</option>
-                        <option value="Pintura">Pintura</option>
-                        <option value="Musica">Musica</option>
-                        <option value="Vitral">Vitral</option>
-                        <option value="Dança">Dança</option>
-                        <option value="Cinema">Cinema</option>
-                        <option value="Teatro">Teatro</option>
-                        <option value="Arte Digital">Arte Digital</option>
-                        <option value="Arquitetonica">Arquitetonica</option>
+                    <select name="categoria" class="select input" id="">
+                        <option value="null" class="opt">Selecione</option>
+                        <option value="Escultura" class="opt">Escultura</option>
+                        <option value="Pintura" class="opt">Pintura</option>
+                        <option value="Musica" class="opt">Musica</option>
+                        <option value="Vitral" class="opt">Vitral</option>
+                        <option value="Dança" class="opt">Dança</option>
+                        <option value="Cinema" class="opt">Cinema</option>
+                        <option value="Teatro" class="opt">Teatro</option>
+                        <option value="Arte Digital" class="opt">Arte Digital</option>
+                        <option value="Arquitetonica" class="opt">Arquitetonica</option>
                     </select>
                 </div>
 
