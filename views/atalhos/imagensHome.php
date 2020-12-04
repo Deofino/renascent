@@ -45,7 +45,7 @@
     .background{
         width: 100vw;
         height: 100vh;
-        background-color: rgba(250, 250, 250, 0.7);
+        background-color: rgba(0, 0, 0, 0.7);
         position: fixed;
         z-index: 9999;
         top: -1000%;
@@ -63,10 +63,12 @@
         position: fixed;
         top: -200%;
         border-radius: 8px;
-        background-color: #000;
+        background-color: #222;
         right: 200%;
         border: white solid 1px;
         margin: 0 auto;
+        font-weight: bold;
+        opacity: .9;
         transition: .8s ease-in-out;
         text-align: center;
         line-height: 37px;
@@ -74,6 +76,12 @@
         color: white;
         width: 40px;
         height: 40px;
+        transition: .7s ease;
+    }
+    .btn_fechar:hover{
+        opacity: 1;
+        transform: scale(1.1);
+        background-color: #000;
     }
     .active{
         top: 0;
@@ -85,6 +93,12 @@
     .imagem-bg > img{
         width: 70vw;
         height: 70vh;
+    }
+
+    @media(max-width:800px){
+        .imagem-bg > img{
+            height: 30vh;
+        }
     }
 
 </style>

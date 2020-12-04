@@ -297,6 +297,19 @@
     }
 
 </script>
+<?php
+    $nameSession =  ($_SESSION['email']);
+    ?>
+      <script>
+          "use strict";
+          let session = '<?php echo ($nameSession); ?>';
+          let liCadastro = document.querySelector('.menuzin');
+          if(session = 'sla'){
+            liCadastro.style.display = 'none';
+          }
+      </script>
+    <?php
+  ?>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="../js/script1.js"></script>

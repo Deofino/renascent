@@ -1,3 +1,16 @@
+<?php
+session_start();
+if (($_SESSION['email'] != 'user') ||
+    ($_SESSION['password'] != md5('123'))
+) {
+    header("Location: ../index.php");
+}else if (($_SESSION['email'] != 'adm') ||
+    ($_SESSION['password'] != md5('123'))
+    ) {
+    header("Location: ../index.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -52,7 +65,7 @@
                             <option value="4">Elogio</option>
                             <option value="5">Reclamação</option>
                         </select>
-                        
+
                     </div>
 
                     <div class="txt-area">
@@ -78,6 +91,7 @@
     <?php
     require_once('./atalhos/footer.php');
     ?>
+
 </body>
 
 </html>

@@ -57,65 +57,6 @@ if (($_SESSION['email'] != 'adm') ||
     <?php
     include_once('./atalhos/footer.php');
     ?>
-    <!--
-    <div class="div">
-        <h1 class="center">Categoria</h1>
-        <form action="../controllers/ClassificacaoController.php" method="post" class="form-group spacing">
-            <label for="type">Tipo categoria:</label>
-            <select name="categoria" class="form-control input" id="">
-                <option value="null">Selecione</option>
-                <option value="Escultura">Escultura</option>
-                <option value="Pintura">Pintura</option>
-                <option value="Vitral">Vitral</option>
-                <option value="Arquitetonica">Arquitetonica</option>
-            </select>
-            <div class="row">
-                <div class="col">
-                    <div class="form-group spacing">
-                        <button class="btn btn-secondary btn-lg" style="float: right;background-color: rgb(110, 60, 0);
-                            letter-spacing: 1.2px;" type="submit">Cadastrar</button>
-
-                        <a href="index-funcionario.php" class="btn btn-lg"
-                            style="float: right;color:black;letter-spacing:1.2px;"><strong>Voltar</strong></a>
-
-                    </div>
-                </div>
-            </div>
-        </form>
-
-    </div>-->
-
 </body>
 
 </html>
-<!--
-    <center>
-        <div class="card">
-            <br>
-            <br>
-            <h2 class="card-header">Cadastrar Categoria!</h2>
-            <div class="card-body">
-                <form action="../controllers/ClassificacaoController.php" method="post">
-                    <h4><span>Categoria:
-                            <br>
-                            <br>
-
-                            <select name="classificacao" class="custom-select sources" placeholder="Selecione"></h4>
-                    <option value="null">Selecione</option>
-                    <option value="Escultura">Escultura</option>
-                    <option value="Pintura">Pintura</option>
-                    <option value="vitral">Vitral</option>
-                    <option value="arquitetonica">Arquitetônica</option></select>
-                    </select></span>
-                    <br>
-                    <br>
-                    <button class="fonteBtn">Cadastrar Categoria</button>
-                    <br>
-                    <br>
-                    <a href="index-funcionario.php" class="voltar">Voltar</a>
-                </form>
-            </div>
-        </div>
-    </center>
-
-     --!>
