@@ -126,7 +126,7 @@ main{
     padding: 1vw;
     text-align: center;
     grid-gap: 3px;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 2fr 1fr;
     grid-template-areas:
     "titulo autor"
     "descricao categoria"
@@ -134,42 +134,63 @@ main{
     "descricao data";
 }
 .titulo{
+    width: 100%;
+    padding-top: 2.5vh;
     grid-area: titulo;
-    padding: 10px 5px;
-    background-color: rgba(240, 240, 240, 0.5);
+    font-size: max(1.3vw,.7em);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: rgba(240, 240, 0, 0.5);
     border-radius: 5px;
 }
 .descricao{
     grid-area: descricao;
-    padding: 10px 5px;
+    word-break: keep-all;
+    overflow: hidden;
+    padding-top: 2.5vh;
+
+    text-overflow: ellipsis;
+    font-size: max(1.2vw,.7em);
+    word-wrap: break-word;
     background-color: rgba(240, 240, 240, 0.5);
     border-radius: 5px;
 }
 .autor{
     grid-area: autor;
-    padding: 10px 5px;
+    overflow: hidden;
+    font-size: max(1.3vw,.7em);
+     text-overflow: ellipsis;
+     padding-top: 2.5vh;
+     word-wrap: break-word;
     background-color: rgba(240, 240, 240, 0.5);
     border-radius: 5px;
 }
 .categoria{
-    padding: 10px 5px;
     background-color: rgba(240, 240, 240, 0.5);
     border-radius: 5px;
-    
+    overflow: hidden;
+    padding-top: 2.5vh;
+    text-overflow: ellipsis;
+    font-size: max(1.3vw,.7em);
     grid-area: categoria;
 }
 .pais{
-    padding: 10px 5px;
     background-color: rgba(240, 240, 240, 0.5);
     border-radius: 5px;
-    
+    padding-top: 2.5vh;
+    font-size: max(1.3vw,.7em);
+    overflow: hidden;
+    text-overflow: ellipsis;
     grid-area: pais;
 }
 .data{
-    padding: 10px 5px;
     background-color: rgba(240, 240, 240, 0.5);
     border-radius: 10px;
-    
+    font-size: max(1.3vw,.7em);
+    padding-top: 2.5vh;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
     grid-area: data;
 }
 .close{
