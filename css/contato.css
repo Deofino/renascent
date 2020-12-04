@@ -67,8 +67,8 @@ main {
 main .l-main {
   border-radius: 10px;
   padding: 50px 40px;
-  border: 1px solid #222;
-  background-color: #eeeeee;
+  border: 1px solid #daa520;
+  background-color: #FFFFE0;
   margin: 0 10px;
 }
 
@@ -101,7 +101,7 @@ main .l-main form div input{
   padding: 15px 10px;
   font-size: 1.1rem;
   border-radius: 5px;
-  border: 0.5px solid #222;
+  border: 0.5px solid #daa520;
 }
 
 main .l-main form div textarea {
@@ -109,7 +109,10 @@ main .l-main form div textarea {
   padding: 05px 10px;
   font-size: 1.1rem;
   border-radius: 5px;
-  border: 0.5px solid #222;
+  border: 0.5px solid #daa520;
+}
+main .l-main form div .categoria{
+  color: #daa520;
 }
 
 main .l-main form div label {
@@ -129,10 +132,10 @@ main .l-main form .button {
 main .l-main form .button button {
   cursor: pointer;
   text-transform: uppercase;
-  border: 1px solid #666;
+  border: 1px solid #daa520;
   border-radius: 5px;
   background: -webkit-gradient(linear, left top, left bottom, from(#ccc), to(#aaa));
-  background: linear-gradient(#ccc, #aaa);
+  background: linear-gradient(to left,#f8c850,#daa520);
   padding: 10px 25px;
   font-size: 1.2rem;
   opacity: 0.9;
@@ -140,20 +143,22 @@ main .l-main form .button button {
 
 main .l-main form .button button:hover {
   opacity: 1;
+    box-shadow: 3px 0px 5px rgba(0, 0, 0, 0.301);
+
 }
 .categoria > select{
   width: 80%;
   padding: 5px 10px;
   font-size: 1.1rem;
   border-radius: 5px;
-  border: 1px solid #222;
+  border: 1px solid #daa520;
 }
 @media screen and (max-width: 750px) {
   main .l-main {
     border-radius: 10px;
     padding: 10px 10px;
-    border: 1px solid #222;
-    background-color: #eeeeee;
+    border: 1px solid #daa520;
+    background-color: #FFFFE0;
     margin: 0 auto;
   }
   main .l-main h2 {
@@ -185,14 +190,14 @@ main .l-main form .button button:hover {
     padding: 15px 10px;
     font-size: 1.1rem;
     border-radius: 5px;
-    border: 0.5px solid #222;
+    border: 0.5px solid #daa520;
   }
   main .l-main form div textarea {
     width: 100%;
     padding: 05px 10px;
     font-size: 1.1rem;
     border-radius: 5px;
-    border: 0.5px solid #222;
+    border: 0.5px solid #daa520;
   }
   main .l-main form div label {
     padding-bottom: 5px;
@@ -210,7 +215,7 @@ main .l-main form .button button:hover {
   main .l-main form .button button {
     cursor: pointer;
     text-transform: uppercase;
-    border: 1px solid #666;
+    border: 1px solid #daa520;
     border-radius: 5px;
     background: -webkit-gradient(linear, left top, left bottom, from(#ccc), to(#aaa));
     background: linear-gradient(#ccc, #aaa);
@@ -228,7 +233,7 @@ main .l-main form .button button:hover {
   padding: 5px 10px;
   font-size: 1.1rem;
   border-radius: 5px;
-  border: 1px solid #222;
+  border: 1px solid #daa520;
 }
 
 }

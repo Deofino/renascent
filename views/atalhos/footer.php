@@ -1,7 +1,7 @@
 
 	<style>
 		body{
-			color: #333;
+			color: #000;
 		}
 	footer{
 		background-color: #eee;
@@ -12,6 +12,7 @@
 		flex-direction: row;
 		padding: 20px 50px;
 		justify-content: space-between;
+		background: #FFFFE0;
 	}
 	footer .logo-msg{
 		display: flex;
@@ -35,10 +36,8 @@
 		padding: 15px 10px;
 		flex-direction: column;
 		width: 30%;
-		border-left: 1px solid black
-		;
-		border-right: 1px solid black
-		;
+		border-left: 1px solid #daa520;
+		border-right: 1px solid #daa520;
 	}
 	.final{
 		display: flex;
@@ -96,7 +95,7 @@
 			width: 90%;
 			margin: 15px auto;
 			border-bottom: 1px solid #222;
-			background-color: #eee;
+			background-color: #FFFFE0;
 		}
 		footer .meio{
 			order: 3;
