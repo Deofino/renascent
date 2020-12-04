@@ -21,19 +21,15 @@ $listaObra = $obra->listarObras();
 $foto = new FotoObra();
 
 session_start();
-if (($_SESSION['email'] != 'user') ||
-    ($_SESSION['password'] != md5('123'))
-) {
-    header("Location: ../index.php");
-}else if (($_SESSION['email'] != 'adm') ||
-    ($_SESSION['password'] != md5('123'))
-    ) {
-    header("Location: ../index.php");
-}
+$session = $_SESSION['email'];
+
+   if($session != 'adm' and $session != 'user'){
+       header('Location: ../index.php');
+   }
 ?>
 
 
-?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
