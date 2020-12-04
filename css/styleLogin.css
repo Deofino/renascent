@@ -19,6 +19,7 @@ body {
 h1 {
 	font-weight: bold;
 	margin: 0;
+	font-size: max(2vw,1.3em);
 }
 
 h2 {
@@ -26,7 +27,7 @@ h2 {
 }
 
 p {
-	font-size: 15px;
+	font-size: max(1vw,.9em);
 	font-weight: 100;
 	line-height: 20px;
 	letter-spacing: 0.5px;
@@ -51,7 +52,7 @@ button {
 	background-color: #f6d725;
 
 	color: #FFFFFF;
-	font-size: 14px;
+	font-size: max(1vw,.7em);
 	font-weight: bold;
 	padding: 13px 40px;
 	letter-spacing: 1px;
@@ -86,7 +87,15 @@ form {
 	height: 100%;
 	text-align: center;
 }
+@media (max-width:700px){
+	form{
+		padding: 0 10px;
+	}
+	button{
+		padding: 13px 10px;
 
+	}
+}
 input {
 	background-color: #eee;
 	border: none;

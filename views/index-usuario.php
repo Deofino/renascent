@@ -60,6 +60,9 @@ if (($_SESSION ['email'] != 'user') ||
 
     <?php include_once('teste.php');  //incluindo carrossel?>
     
+
+    
+    <?php include_once('atalhos/imagensHome.php'); ?>
 <!--FIM-CARD-->
  
 <!--FOOTER-->

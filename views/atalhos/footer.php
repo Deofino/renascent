@@ -8,7 +8,6 @@
 		display: flex;
 		flex-wrap: nowrap;
 		width: 100%;
-		margin-top: 100px;
 		flex-direction: row;
 		padding: 20px 50px;
 		justify-content: space-between;
