@@ -153,7 +153,6 @@
     for (let i = 0; i < imagens.length; i++) {
         imagens[i].addEventListener('click', function(){
             pathImagem = imagens[i].getAttribute('src');
-            console.log(pathImagem);
             imagem_bg.setAttribute('src', pathImagem);
             background.classList.add('active');
             btn_close.classList.add('btn_fechar_active')

@@ -20,7 +20,7 @@ main{
     padding: 30px;
 }
 .cont .card{
-    height: 35vh;
+    height: 250px;
     background: #FFFFE0;
     margin: 50px 30px;
     display: flex;
@@ -32,13 +32,15 @@ main{
     flex-basis: 300px;
 }
 .cont .card:hover {
-    height: 55vh;
+    height: 350px;
 }
 .cont .card .imgBox{
     position: relative;
     width: 90%;
     margin: 0 auto;
+    cursor: pointer;
     height: 260px;
+    border-radius: 20px;
     top: -60px;
     z-index: 1;
     box-shadow: 0 5px 20px rgba(0, 0, 0, .2);
@@ -47,7 +49,6 @@ main{
     width: 100%;
     height: 100%;
     border: 1px solid black;
-    border-radius: 20px;
 }
 .cont .card .contente{
     margin-top: -140px;
@@ -67,6 +68,189 @@ main{
 }
 .cont .card:hover .contente{
     visibility: visible;
+    position: relative;
     opacity: 1;
-    margin-top:-40px;
+    margin-top:-55px;
+}
+.cont .card:hover .contente > .func{
+    bottom: 10px;
+}
+
+.background{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    z-index: 9999;
+    top: -1000%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    transition: .8s ease-in-out;
+    left: 0;
+}
+.close{
+    position: relative;
+    cursor: pointer;
+}
+.background{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    z-index: 9999;
+    top: -1000%;
+    flex-wrap: wrap;
+    color: white;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    transition: .8s ease-in-out;
+    left: 0;
+}
+.conteudo{
+    display: grid;
+    width: 90vw;
+    height: 40vh;
+    border-radius: 10px;
+    margin-top: 5vh;
+    padding: 1vw;
+    text-align: center;
+    grid-gap: 3px;
+    grid-template-columns: 60% 40%;
+    grid-template-areas:
+    "titulo autor"
+    "descricao categoria"
+    "descricao pais"
+    "descricao data";
+}
+.titulo{
+    grid-area: titulo;
+    padding: 10px 5px;
+    background-color: rgba(240, 240, 240, 0.5);
+    border-radius: 5px;
+}
+.descricao{
+    grid-area: descricao;
+    padding: 10px 5px;
+    background-color: rgba(240, 240, 240, 0.5);
+    border-radius: 5px;
+}
+.autor{
+    grid-area: autor;
+    padding: 10px 5px;
+    background-color: rgba(240, 240, 240, 0.5);
+    border-radius: 5px;
+}
+.categoria{
+    padding: 10px 5px;
+    background-color: rgba(240, 240, 240, 0.5);
+    border-radius: 5px;
+    
+    grid-area: categoria;
+}
+.pais{
+    padding: 10px 5px;
+    background-color: rgba(240, 240, 240, 0.5);
+    border-radius: 5px;
+    
+    grid-area: pais;
+}
+.data{
+    padding: 10px 5px;
+    background-color: rgba(240, 240, 240, 0.5);
+    border-radius: 10px;
+    
+    grid-area: data;
+}
+.close{
+    position: relative;
+    cursor: pointer;
+}
+.btn_fechar{
+    position: fixed;
+    top: -200%;
+    border-radius: 8px;
+    background-color: #222;
+    border: white solid 1px;
+    margin: 0 auto;
+    font-weight: bold;
+    opacity: .9;
+    transition: .8s ease-in-out;
+    text-align: center;
+    line-height: 37px;
+    font-size: 25px;
+    color: white;
+    width: 40px;
+    height: 40px;
+    transition: .7s ease;
+}
+.btn_fechar:hover{
+    opacity: 1;
+    transform: scale(1.1);
+    background-color: #000;
+}
+.active{
+    top: 0;
+}
+.btn_fechar_active{
+    right: 20px;
+    top: 20px;
+}
+.imagem-bg{
+    display: flex;
+    width: 50vw;
+    border-radius: 10px;
+    justify-content: center;
+    margin: 0 auto;
+    height: 55vh;
+}
+.imagem-bg > img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+@media(max-width:800px){
+    .imagem-bg > img{
+        width: 70vw;
+        height: 100%;
+    }
+   
+    .imagem-bg{
+        display: flex;
+        width: 50vw;
+        border-radius: 10px;
+        justify-content: center;
+        margin: 0 auto;
+        height: 45vh;
+    }
+
+    .cont .card .imgBox{
+        height: 200px;
+        border-radius: 20px;
+        top: -30px;
+        
+    }
+        
+    .cont .card{
+        height: 40vh;
+        background: #FFFFE0;
+        margin: 50px 30px;
+        display: flex;
+        border: 1.5px solid #111;
+        flex-direction: column;
+        box-shadow: 0 5px 202px rgba(0, 0, 0, .5);
+        transition: 0.5s ease;
+        border-radius: 4px;
+        flex-basis: 300px;
+    }
+    .cont .card:hover {
+        height: 55vh;
+    }
+        
+    .cont .card:hover .contente{
+        margin-top:-10px;
+    }
 }

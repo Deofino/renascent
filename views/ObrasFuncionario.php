@@ -42,6 +42,7 @@ $session = $_SESSION['email'];
 <style>
     body {
         background: url('../img/bg.png');
+        
     }
 
     .footer {
@@ -81,7 +82,7 @@ $session = $_SESSION['email'];
                                         ?>
                                             <img src="<?php
                                                 echo ($rowFoto['caminhoFoto']);
-                                            ?>" alt="<?php echo($tituloObra); ?>">
+                                            ?>" alt="<?php echo($tituloObra); ?>" id="imagem-obra">
                                         <?php
                                     }
                                 ?>
@@ -89,6 +90,10 @@ $session = $_SESSION['email'];
                                 <div class="contente">
                                     <h2><?php echo limita_caracteres($tituloObra,15,true); ?></h2>
                                     <p><?php echo limita_caracteres($descricaoObra,100,true) ?></p>
+                                    <div class="func">
+                                        <a href="../controllers/editarObra.php">Editar</a>
+                                        <a href="../controllers/excluirObra.php">Excluir</a>
+                                    </div>
                                 </div>
                         </div>
 
@@ -97,24 +102,61 @@ $session = $_SESSION['email'];
                 }
             
             ?>
-            <div class="card">
-                <div class="imgBox">
-                    <img src="../img/fotosHome/img1.jpg">
-                </div>
-                <div class="contente">
-                    <h2>Card 1</h2>
-                    <p>AQUI FINGE QUE TEM UM TEXTO BOM, É SÓ PRA EU VER
-                        O ESPAÇO QUE TEM, É ISSO, ATÉ MAIS</p>
-                </div>
-            </div>
         </div>
     </main>
+    <br><br><br>
+    
+    <div class="background">
+            <div class="imagem-bg">
+                <img src="" alt="" class="img-bg">
+                <?php
+                    
+                ?>
+            </div>
+            
+            <div class="conteudo">
+                <h1 class="titulo">Título</h1>
+                <h3 class="descricao">Descrição</h3>
+                <h2 class="autor">Autor</h2>
+                <h2 class="pais">País</h2>
+                <h2 class="categoria">Categoria</h2>
+                <h2 class="data">Lançamento</h2>
+            </div>
+
+            <div class="close">
+                <span class="btn_fechar">&times;</span>
+        </div>
+        
+    </div>
     <div class="footer"></div>
     <?php
     require_once('./atalhos/footer.php');
     ?>
 
 
+
+    <script>
+
+            let imagens = document.querySelectorAll("#imagem-obra");
+            let background = document.querySelector('.background');
+            let btn_fechar = document.querySelector('.btn_fechar');
+            let setImage = document.querySelector('.img-bg');
+            let imagemSRC = '';
+            for (let i = 0; i < imagens.length; i++) {
+                imagens[i].addEventListener('click',function(){
+                    imagemSRC = imagens[i].getAttribute('src');
+                    setImage.setAttribute('src',imagemSRC);
+                    background.classList.add('active');
+                    btn_fechar.classList.add('btn_fechar_active');
+                });
+
+                btn_fechar.addEventListener('click',function(){
+                    background.classList.remove('active');
+                    btn_fechar.classList.remove('btn_fechar_active');
+                })
+            }
+
+    </script>
 
 </body>
 
