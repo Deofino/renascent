@@ -70,10 +70,18 @@ main{
     visibility: visible;
     position: relative;
     opacity: 1;
+    height: 100%;
     margin-top:-55px;
 }
 .cont .card:hover .contente > .func{
-    bottom: 10px;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+}
+
+.cont .card:hover .contente > .func a{
+    margin: 0 5px;
 }
 
 .background{

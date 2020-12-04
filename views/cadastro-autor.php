@@ -14,7 +14,8 @@ if (($_SESSION['email'] != 'adm') ||
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Renascent</title>
     
-    <link href="../css/cadastros.css" type="text/css" rel="stylesheet">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+<link href="../css/cadastros.css" type="text/css" rel="stylesheet">
           
 </head>
 <body>

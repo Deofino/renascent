@@ -15,7 +15,7 @@ if (($_SESSION['email'] != 'adm') ||
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link rel="shortcut icon" href="../imgs/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="../css/fonta/fontawesome-all.min.css">
     <link rel="stylesheet" type="text/css" href="../css/style2.css">
 </head>
