@@ -75,6 +75,13 @@
                         return $list;
                 
         }
+        public function deletarFoto($idObra){
+                $con = Conexao::getConexao();
+                $query = $con->prepare("delete from tbfotoobra where idObra = ?");
+                $query->bindValue(1,$idObra);
+                $query->execute();
+                return 'foto deletada';
+        }
 }
 
 ?>

@@ -1,4 +1,6 @@
 <?php
+        require_once ('FotoObra.php');
+
 class Obra
 {
         private $titulo, $descricao, $autor, $dataObra, $classificacao, $periodo, $pais, $funcionario, $dataCadastro;
@@ -124,12 +126,23 @@ class Obra
                 //pegar todos os dados allllllllll
                 return $lista;
         }
+
         public function deleteObra($idObra){
-                $con = Conexao::getConexao();
-                $query = $con->prepare('delete from tbobra where idObra = ?');
-                $query->bindValue(1, $idObra);
-                $query->execute();
+                try{
+                        
+                        $foto = new FotoObra();
+                        $foto->deletarFoto($idObra);
+                        $con = Conexao::getConexao();
+                        $query = $con->prepare('delete from tbobra where idObra = ?');
+                        $query->bindValue(1, $idObra);
+                        $query->execute();
+                        return 'success';
+                }catch(Exception $e){
+                        return $e;
+                }
+               
         }
+       
         public function ListarUltimoID(){
                 $con = Conexao::getConexao();
                 $select = "select max(idObra) as total from tbobra";

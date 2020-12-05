@@ -1,12 +1,13 @@
-e link enviará o parâmetro pelo método GET
-
-<a href="test.php?tmpString=Teste">link teste</a>
-Para resgatar o parâmetro "tmpString" na página "test.php":
 
 <?php
-if (isset($_GET['tmpString']))
-    $tmpString = $_GET['tmpString'];
-else
-    $tmpString = null;
+    require_once('./global.php');
+    $obra = new Obra();
+    if(isset($_GET['idObra'])){
+        echo $obra->deleteObra($_GET['idObra']);
+        echo ("<script>
+            alert('Obra deletada com sucesso');
+            window.location.href = '../views/ObrasFuncionario.php';
+        </script>");
+    }
 
-echo 'o valor de tmpString é: '.$tmpString;
+?>

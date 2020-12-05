@@ -216,9 +216,13 @@ if ($session != 'adm' and $session != 'user') {
 
         let divFunc = document.querySelectorAll('.func');
         let sessionObra = '<?php echo ($session); ?>';
-        for (let i = 0; i < divFunc.length; i++) {
+        console.log(sessionObra);
+        if(sessionObra != 'adm'){
+            for (let i = 0; i < divFunc.length; i++) {
             divFunc[i].style.display = 'none';
         }
+        }
+        
     </script>
 
 </body>
