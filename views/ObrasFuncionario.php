@@ -82,53 +82,37 @@ if ($session != 'adm' and $session != 'user') {
                 $classificacao = $rowObra['descricaoClassificacao'];
                 $pais = $rowObra['paisObra'];
                 $data = $rowObra['dataObra'];
-                $listaFoto = $foto->listarFotosObra($idObra);
+                $primeiraFoto = $foto->listarFoto($idObra);
+                $listaFotosObras = $foto->listarFotosObra($idObra);
             ?>
 
                 <div class="card">
 
                     <div class="imgBox">
-                        <?php
-                        foreach ($listaFoto as $rowFoto) {
-                        ?>
-                            <img src="<?php
+                        <img src="<?php echo ($primeiraFoto) ?>" alt="Foto" class="imgs-obra">
 
-                                        echo ($rowFoto['caminhoFoto']);
-                                        ?>" alt="<?php echo ($tituloObra); ?>" id="<?php echo ($idObra); ?>" class="imgs-obra">
-
-                            <script>
-                                /*let titulos = [];
-                                let ids = [];
-                                let descricao = [];
-                                let paises = [];
-                                let categorias = [];
-                                let autor = [];*/
-                                titulos.push('<?php echo $tituloObra ?>');
-                                ids.push('<?php echo $idObra ?>');
-                                descricoes.push('<?php echo $descricaoObra ?>');
-                                paises.push('<?php echo $pais ?>');
-                                categorias.push('<?php echo $classificacao ?>');
-                                autores.push('<?php echo $autorObra ?>');
-                                datas.push('<?php echo $data ?>');
-
-                            </script>
-                        <?php
-                        }
-                        ?>
                     </div>
                     <div class="contente">
-                        <h2><?php echo limita_caracteres($tituloObra, 15, true); ?></h2>
+                        <h3><?php echo limita_caracteres($tituloObra, 15, true); ?></h3>
                         <p><?php echo limita_caracteres($descricaoObra, 100, true) ?></p>
                         <div class="func">
-                            <a href="../controllers/editarObra.php?idObra=<?php echo ($idObra); ?>">Editar</a>
+                            <a href="editarObra.php?idObra=<?php echo ($idObra); ?>">Editar</a>
                             <a href="../controllers/excluirObra.php?idObra=<?php echo ($idObra); ?>">Excluir</a>
                         </div>
                     </div>
                 </div>
 
 
-               
 
+                <script>
+                    titulos.push('<?php echo $tituloObra ?>');
+                    ids.push('<?php echo $idObra ?>');
+                    descricoes.push('<?php echo $descricaoObra ?>');
+                    paises.push('<?php echo $pais ?>');
+                    categorias.push('<?php echo $classificacao ?>');
+                    autores.push('<?php echo $autorObra ?>');
+                    datas.push('<?php echo $data ?>');
+                </script>
 
             <?php
 
@@ -140,32 +124,53 @@ if ($session != 'adm' and $session != 'user') {
     <br><br><br>
 
     <div class="manopfvfunciona" style="position: relative;">
-                    <div class="background">
-                        <div class="imagem-bg">
-                            <img src="" alt="" class="img-bg">
-                            <?php
+        <div class="background">
+            <div class="imagem-bg">
+                <div class="slider">
+                    <?php
+                    $i = 0;
+                    foreach ($listaFotosObras as $foto) {
+                    ?>
+                        <img src="<?php
+                                    echo $foto['caminhoFoto'];
+                                    ?>" alt="Imagem" class="img-bg" id="<?php echo ($i) ?>">
 
-                            ?>
-                        </div>
-
-                        <div class="conteudo">
-                            <div class="titulo">
-                                <h3 class="tit"></h2>
-                            </div>
-                            <div class="descricao">
-                                <h3 class="desc"></h3>
-                            </div>
-                            <h3 class="autor"></h3>
-                            <h3 class="pais"></h3>
-                            <h3 class="categoria"></h3>
-                            <h3 class="data"></h3>
-                        </div>
-
-                        <div class="close">
-                            <span class="btn_fechar">&times;</span>
-                        </div>
+                    <?php $i++;
+                    }
+                    ?>
+                    <div class="right" id="right">
+                        <i class="fas fa-arrow-right"></i>
                     </div>
                 </div>
+            </div>
+
+            <div class="conteudo">
+                <div class="titulo">
+                    <h3 class="tit">
+                    </h3>
+                </div>
+                <div class="descricao">
+                    <h3 class="desc"></h3>
+                </div>
+                <div class="autor">
+                    <h3 class="aut"></h3>
+                </div>
+                <div class="pais">
+                    <h3 class="pa"></h3>
+                </div>
+                <div class="categoria">
+                    <h3 class="cat"></h3>
+                </div>
+                <div class="data">
+                    <h3 class="dat"></h3>
+                </div>
+            </div>
+
+            <div class="close">
+                <span class="btn_fechar">&times;</span>
+            </div>
+        </div>
+    </div>
 
 
     </div>
@@ -179,34 +184,61 @@ if ($session != 'adm' and $session != 'user') {
     <script>
         let imagens = document.querySelectorAll(".imgs-obra");
         let background = document.querySelector('.background');
+        let controleProx = document.querySelector('#right');
+        let controlePrev = document.querySelector('#left');
         let btn_fechar = document.querySelector('.btn_fechar');
-        let setImage = document.querySelector('.img-bg');
+        let setImage = document.querySelectorAll('.img-bg');
         let imagemSRC = '';
+
 
         let titulo = document.querySelector('.tit');
         let descricao = document.querySelector('.desc');
-        let autor = document.querySelector('.autor');
-        let pais = document.querySelector('.pais');
-        let categoria = document.querySelector('.categoria');
-        let data = document.querySelector('.data');
+        let autor = document.querySelector('.aut');
+        let pais = document.querySelector('.pa');
+        let categoria = document.querySelector('.cat');
+        let data = document.querySelector('.dat');
+
+        setImage[0].classList.add('image-active');
+
+        for (let i = 0; i < imagens.length; i++) {
+            imagens[i].addEventListener('click', function(evt) {
 
 
-        for (let i = 0; i < titulos.length; i++) {
-            imagens[i].addEventListener('click',function(evt){
+
                 imagemSRC = imagens[i].getAttribute('src');
-                setImage.setAttribute('src',imagemSRC);
+                setImage[i].setAttribute('src', imagemSRC);
                 background.classList.add('active');
                 btn_fechar.classList.add('btn_fechar_active');
-                titulo.innerHTML = 'Título: '+titulos[i];
-                descricao.innerHTML = 'Descrição: '+descricoes[i];
-                autor.innerHTML = 'Autor: '+autores[i];
-                pais.innerHTML = 'Origem: '+paises[i];
-                categoria.innerHTML = 'Categoria: '+categorias[i];
-                data.innerHTML = 'Data: '+datas[i];
+                titulo.innerHTML = 'Título: ' + titulos[i];
+                descricao.innerHTML = 'Descrição: ' + descricoes[i];
+                autor.innerHTML = 'Autor: ' + autores[i];
+                pais.innerHTML = 'Origem: ' + paises[i];
+                categoria.innerHTML = 'Categoria: ' + categorias[i];
+                data.innerHTML = 'Data: ' + datas[i];
+
             })
 
         }
+        let max = setImage.length;
+        let i = 0;
+        let j = 1;
+        controleProx.addEventListener('click', prox, true);
 
+        function prox() {
+
+            if (j < max) {
+
+                setImage[i].classList.remove('image-active');
+                setImage[j].classList.add('image-active');
+                j++;
+                i++;
+            } else {
+                setImage[i].classList.remove('image-active');
+                i = 0;
+                setImage[i].classList.add('image-active');
+                j = 1;
+            }
+        }
 
         btn_fechar.addEventListener('click', function() {
             background.classList.remove('active');
@@ -216,13 +248,11 @@ if ($session != 'adm' and $session != 'user') {
 
         let divFunc = document.querySelectorAll('.func');
         let sessionObra = '<?php echo ($session); ?>';
-        console.log(sessionObra);
-        if(sessionObra != 'adm'){
+        if (sessionObra != 'adm') {
             for (let i = 0; i < divFunc.length; i++) {
-            divFunc[i].style.display = 'none';
+                divFunc[i].style.display = 'none';
+            }
         }
-        }
-        
     </script>
 
 </body>

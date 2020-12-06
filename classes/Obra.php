@@ -114,7 +114,7 @@ class Obra
         {
                 $con = Conexao::getConexao();
                 $select = "select idObra,tituloObra,descricaoObra,nomeAutor,
-                dataObra,descricaoClassificacao,paisObra from tbobra 
+                dataObra,descricaoClassificacao,paisObra,tbautor.idAutor,tbclassificacao.idClassificacao from tbobra 
                 join tbautor on tbautor.idAutor = tbobra.idAutor 
                 join tbclassificacao on tbclassificacao.idClassificacao = tbobra.idClassificacao";
                 $res = $con->query($select);
@@ -158,4 +158,30 @@ class Obra
                 // o alias
                 return $res['total'];
         }
+
+                
+        public function getObra($lista,$idObra){
+
+                        foreach ($lista as $row) {
+                        if($row['idObra'] == $idObra){
+                                return $row;
+                        }
+                }
+        }
+        public function editarObra($obra,$idObra){
+                $con = Conexao::getConexao();
+                $query = $con->prepare('update tbobra set tituloObra = ?,descricaoObra = ?,idAutor = ?,
+                        dataObra = ?,idClassificacao = ?,paisObra = ?,dataCadastro = ? where idObra = ?');
+                $query->bindValue(1, $obra->getTitulo());
+                $query->bindValue(2, $obra->getDescricao());
+                $query->bindValue(3, $obra->getAutor());
+                $query->bindValue(4, $obra->getDataObra());
+                $query->bindValue(5, $obra->getClassificacao());
+                $query->bindValue(6, $obra->getPais());
+                $query->bindValue(7, $obra->getDataCadastro());
+                $query->bindValue(8, $idObra);
+                $query->execute();
+                return "confirma phpMyAdmin";
+        }
+
 }

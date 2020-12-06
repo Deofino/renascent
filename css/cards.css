@@ -46,6 +46,7 @@ main{
     box-shadow: 0 5px 20px rgba(0, 0, 0, .2);
 }
 .cont .card .imgBox img{
+    position: relative;
     width: 100%;
     height: 100%;
     border: 1px solid black;
@@ -133,6 +134,12 @@ main{
     "descricao pais"
     "descricao data";
 }
+.conteudo div{
+    height: 100%;
+}
+.conteudo > div h3{
+    transform: translateY(50%);
+}
 .titulo{
     width: 100%;
     padding-top: 2.5vh;
@@ -140,7 +147,7 @@ main{
     font-size: max(1.3vw,.7em);
     overflow: hidden;
     text-overflow: ellipsis;
-    background-color: rgba(240, 240, 0, 0.5);
+    background-color: rgba(240, 240, 240, 0.5);
     border-radius: 5px;
 }
 .descricao{
@@ -229,20 +236,62 @@ main{
 }
 .imagem-bg{
     display: flex;
-    width: 50vw;
+    width: 70vw;
+    flex-wrap: wrap;
     border-radius: 10px;
     justify-content: center;
     margin: 0 auto;
     height: 55vh;
 }
-.imagem-bg > img{
+.imagem-bg > .slider{
+    position: relative;
     width: 100%;
-    height: 100%;
-    border-radius: 10px;
+    max-width: 800px;
+    height: 90%;
+}
+.imagem-bg > .slider .right{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 2px solid black;
+    min-width: 20px;
+    cursor: pointer;
+    opacity: .9;
+    background-color: rgba(240, 240, 240, 0.7);
+    padding: max(2vh,3vh) max(2vw,3vw);
 }
 
+.imagem-bg > .slider .right:active{
+    opacity: 1;
+    background-color: rgba(240, 240, 240, 0.9);
+}
+
+.imagem-bg > .slider .right i{
+    font-size: max(2vw,1.5em);
+    color: black;
+    font-weight: bold;
+}
+
+
+
+.imagem-bg  .slider > img{
+    position: absolute;
+    width: 100%;
+    transform: translateY(10%);
+    opacity: 0;
+    transition: ease 2s;
+    height: 100%;
+}
+
+.imagem-bg  .slider .image-active{
+    opacity: 1;
+}
+
+
 @media(max-width:800px){
-    .imagem-bg > img{
+    .imagem-bg > .slider{
         width: 70vw;
         height: 100%;
     }
@@ -282,4 +331,15 @@ main{
     .cont .card:hover .contente{
         margin-top:-10px;
     }
+
+    
+.imagem-bg  .slider > img{
+    position: absolute;
+    width: 100%;
+    transform: translateY(2vh);
+    opacity: 0;
+    transition: ease 2s;
+    height: 100%;
+}
+
 }

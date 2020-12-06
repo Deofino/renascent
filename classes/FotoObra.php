@@ -75,6 +75,15 @@
                         return $list;
                 
         }
+        public function listarFoto($idObra){
+                $con  = Conexao::getConexao();
+                $query = $con->prepare("select id,nomeFoto,idObra,min(caminhoFoto) as 'caminho' ,extensaoFoto from tbfotoobra
+                        where idObra = ?");
+                        $query->bindValue(1,$idObra);
+                        $query->execute();
+                        $list = $query->fetch();
+                        return $list['caminho'];
+        }
         public function deletarFoto($idObra){
                 $con = Conexao::getConexao();
                 $query = $con->prepare("delete from tbfotoobra where idObra = ?");
