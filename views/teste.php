@@ -62,7 +62,7 @@
 }
 
 .slider .imgBx .content h2{
-    font-size: 6em;
+    font-size: max(6.3vw,2em);
     line-height: 1em;
     color: #fff;
 }

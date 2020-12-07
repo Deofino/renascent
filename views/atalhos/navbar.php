@@ -76,6 +76,7 @@
     color: #000;
     text-decoration: none;
     padding: 0px 10px 20px;
+    width:100%;
     display: block;
   }
 
@@ -154,7 +155,7 @@
     }
 
     .header .nav {
-      background: #fff;
+      background: rgba(255,255,255,0.95);
       width: 350px;
       height: 100%;
       position: fixed;
@@ -169,7 +170,7 @@
     .header .nav ul li {
       padding: 15px 5px;
       font-size: 20px;
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid #999;
     }
 
     .menuzin {

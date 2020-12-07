@@ -121,6 +121,10 @@ if (($_SESSION['email'] != 'adm') ||
 
     </main>
     <br><br><br>
+    <br><br><br>
+    
+    <br><br><br>
+    <br><br><br>
 
     <?php 
     include_once('./atalhos/footer.php');
