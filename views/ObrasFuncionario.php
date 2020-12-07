@@ -86,6 +86,54 @@ if ($session != 'adm' and $session != 'user') {
                 $listaFotosObras = $foto->listarFotosObra($idObra);
             ?>
 
+                <div class="manopfvfunciona" style="position: relative;">
+                    <div class="background">
+                        <div class="imagem-bg">
+                            <div class="slider">
+                                <?php
+                                $i = 0;
+                                foreach ($listaFotosObras as $f) {
+                                ?>
+                                    <img src="<?php
+                                                echo $f['caminhoFoto'];
+                                                ?>" alt="Imagem" class="img-bg" id="<?php echo ($i) ?>">
+
+                                <?php $i++;
+                                }
+                                ?>
+                                <div class="right" id="right">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="conteudo">
+                            <div class="titulo">
+                                <h3 class="tit">
+                                </h3>
+                            </div>
+                            <div class="descricao">
+                                <h3 class="desc"></h3>
+                            </div>
+                            <div class="autor">
+                                <h3 class="aut"></h3>
+                            </div>
+                            <div class="pais">
+                                <h3 class="pa"></h3>
+                            </div>
+                            <div class="categoria">
+                                <h3 class="cat"></h3>
+                            </div>
+                            <div class="data">
+                                <h3 class="dat"></h3>
+                            </div>
+                        </div>
+
+                        <div class="close">
+                            <span class="btn_fechar">&times;</span>
+                        </div>
+                    </div>
+                </div>
                 <div class="card">
 
                     <div class="imgBox">
@@ -114,6 +162,8 @@ if ($session != 'adm' and $session != 'user') {
                     datas.push('<?php echo $data ?>');
                 </script>
 
+
+
             <?php
 
             }
@@ -121,59 +171,11 @@ if ($session != 'adm' and $session != 'user') {
             ?>
         </div>
     </main>
+
     <br><br><br>
 
-    <div class="manopfvfunciona" style="position: relative;">
-        <div class="background">
-            <div class="imagem-bg">
-                <div class="slider">
-                    <?php
-                    $i = 0;
-                    foreach ($listaFotosObras as $foto) {
-                    ?>
-                        <img src="<?php
-                                    echo $foto['caminhoFoto'];
-                                    ?>" alt="Imagem" class="img-bg" id="<?php echo ($i) ?>">
-
-                    <?php $i++;
-                    }
-                    ?>
-                    <div class="right" id="right">
-                        <i class="fas fa-arrow-right"></i>
-                    </div>
-                </div>
-            </div>
-
-            <div class="conteudo">
-                <div class="titulo">
-                    <h3 class="tit">
-                    </h3>
-                </div>
-                <div class="descricao">
-                    <h3 class="desc"></h3>
-                </div>
-                <div class="autor">
-                    <h3 class="aut"></h3>
-                </div>
-                <div class="pais">
-                    <h3 class="pa"></h3>
-                </div>
-                <div class="categoria">
-                    <h3 class="cat"></h3>
-                </div>
-                <div class="data">
-                    <h3 class="dat"></h3>
-                </div>
-            </div>
-
-            <div class="close">
-                <span class="btn_fechar">&times;</span>
-            </div>
-        </div>
-    </div>
 
 
-    </div>
     <div class="footer"></div>
     <?php
     require_once('./atalhos/footer.php');
@@ -183,32 +185,27 @@ if ($session != 'adm' and $session != 'user') {
 
     <script>
         let imagens = document.querySelectorAll(".imgs-obra");
-        let background = document.querySelector('.background');
-        let controleProx = document.querySelector('#right');
-        let controlePrev = document.querySelector('#left');
-        let btn_fechar = document.querySelector('.btn_fechar');
-        let setImage = document.querySelectorAll('.img-bg');
-        let imagemSRC = '';
-
-
-        let titulo = document.querySelector('.tit');
-        let descricao = document.querySelector('.desc');
-        let autor = document.querySelector('.aut');
-        let pais = document.querySelector('.pa');
-        let categoria = document.querySelector('.cat');
-        let data = document.querySelector('.dat');
-
-        setImage[0].classList.add('image-active');
+        let background = document.querySelectorAll('.background');
+        let controleProx = document.querySelectorAll('#right');
+        let btn_fechar = document.querySelectorAll('.btn_fechar');
 
         for (let i = 0; i < imagens.length; i++) {
-            imagens[i].addEventListener('click', function(evt) {
+            let imagemSRC = [];
+            let setImage = background[i].querySelectorAll('.img-bg');
+            setImage[0].classList.add('image-active');
+            let titulo = background[i].querySelector('.tit');
+            let descricao = background[i].querySelector('.desc');
+            let autor = background[i].querySelector('.aut');
+            let pais = background[i].querySelector('.pa');
+            let categoria = background[i].querySelector('.cat');
+            let data = background[i].querySelector('.dat');
 
 
 
-                imagemSRC = imagens[i].getAttribute('src');
-                setImage[i].setAttribute('src', imagemSRC);
-                background.classList.add('active');
-                btn_fechar.classList.add('btn_fechar_active');
+            imagens[i].addEventListener('click', function() {
+                console.log('click');
+                background[i].classList.add('active');
+                btn_fechar[i].classList.add('btn_fechar_active');
                 titulo.innerHTML = 'Título: ' + titulos[i];
                 descricao.innerHTML = 'Descrição: ' + descricoes[i];
                 autor.innerHTML = 'Autor: ' + autores[i];
@@ -216,34 +213,38 @@ if ($session != 'adm' and $session != 'user') {
                 categoria.innerHTML = 'Categoria: ' + categorias[i];
                 data.innerHTML = 'Data: ' + datas[i];
 
+            });
+
+            btn_fechar[i].addEventListener('click', function() {
+                background[i].classList.remove('active');
+                btn_fechar[i].classList.remove('btn_fechar_active');
             })
 
+            let max = setImage.length;
+            let ind = 0;
+            let j = 1;
+            controleProx[i].addEventListener('click', function() {
+                if (j < max) {
+
+                    setImage[ind].classList.remove('image-active');
+                    setImage[j].classList.add('image-active');
+                    j++;
+                    ind++;
+                } else {
+                    setImage[ind].classList.remove('image-active');
+                    ind = 0;
+                    setImage[ind].classList.add('image-active');
+                    j = 1;
+                }
+            }, true);
+
+
+
         }
-        let max = setImage.length;
-        let i = 0;
-        let j = 1;
-        controleProx.addEventListener('click', prox, true);
 
-        function prox() {
 
-            if (j < max) {
 
-                setImage[i].classList.remove('image-active');
-                setImage[j].classList.add('image-active');
-                j++;
-                i++;
-            } else {
-                setImage[i].classList.remove('image-active');
-                i = 0;
-                setImage[i].classList.add('image-active');
-                j = 1;
-            }
-        }
 
-        btn_fechar.addEventListener('click', function() {
-            background.classList.remove('active');
-            btn_fechar.classList.remove('btn_fechar_active');
-        })
 
 
         let divFunc = document.querySelectorAll('.func');

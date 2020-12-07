@@ -5,9 +5,15 @@
     $nascimento = filter_input(INPUT_POST,"nascimentoAutor",FILTER_SANITIZE_STRING);
     $falecimento = filter_input(INPUT_POST,"falecimentoAutor",FILTER_SANITIZE_STRING);
 
-    if(strtotime($nascimento) < strtotime($falecimento)){
-        $anoFalecimento  = date('Y',strtotime($falecimento));
-        $anoNascimento  = date('Y',strtotime($nascimento));
+    $anoFalecimento  = date('Y',strtotime($falecimento));
+    $anoNascimento  = date('Y',strtotime($nascimento));
+     
+    if($anoNascimento > $anoFalecimento){
+        echo ("<script>
+        location.href = '../views/cadastro-autor.php';
+        alert('Idade negativa bro, veio do futuro?');
+    </script>");
+    }else{
         if(($anoFalecimento - $anoNascimento) >= 120){
             echo ("<script>
                 location.href = '../views/cadastro-autor.php';
@@ -33,10 +39,6 @@
             }
            
         }
-    }else{
-        echo ("<script>
-        location.href = '../views/cadastro-autor.php';
-        alert('Idade negativa bro, veio do futuro?');
-    </script>");
-        }    
+    }
+
 ?>
